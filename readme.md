@@ -71,6 +71,16 @@ Hay una libreria para convertir que se llama **strconv**<br />
 Todo con funciones, no existen metodos (son funciones en si misma)<br />
 Alojamos un dato en **_** cuando no vamos a usarlo<br />
 
+### Vectores
 
+**slice**: Vectores dinamicos, puedo ampiar la dimension en tiempo de ejecucion
+```go
+var vector [5]int // vector, no puedo ampliar mas
+var vector_slice []int //slice, puedo apliar dinamicamente
+elementos[3:] //de la posicion 3 hasta el ultimo, igual que python
 
+elementos := make(tipo,largo,capacidad maxima)
+len(elementos) //tamaño
+cap(elementos) //capacidad
+```
 ![Events](images/00001.png)
