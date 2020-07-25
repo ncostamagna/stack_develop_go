@@ -83,4 +83,22 @@ elementos := make(tipo,largo,capacidad maxima)
 len(elementos) //tamaño
 cap(elementos) //capacidad
 ```
-![Events](images/00001.png)
+### Interfaces
+Nos ayudan a definir comportamientos, operaciones y conductas<br />
+Se definen los metodos que vamos autilizar para implementar esa interface<br />
+Implementar el mismo comportamiento a objetos que no tienen relacion entre si<br />
+```go
+type serVivo interface{
+  edad() int
+}
+
+type humano interface{
+  pensar()
+  edad() int
+}
+
+type animal interface{
+  comer()
+  edad() int
+}
+```
