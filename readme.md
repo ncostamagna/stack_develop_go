@@ -65,7 +65,11 @@ numero2 = int("2") // convierto a 2 entero
 texto = fmt.Sprintf("%d", numero)
 
 ```
-Hay una libreria para convertir que se llama **strconv**
+Hay una libreria para convertir que se llama **strconv**<br />
+
+### Funciones
+Todo con funciones, no existen metodos (son funciones en si misma)<br />
+Alojamos un dato en **_** cuando no vamos a usarlo<br />
 
 
 
