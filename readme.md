@@ -105,3 +105,12 @@ type animal interface{
 
 ### Recursion
 Funcion que se llama a si misma
+
+### Asincronismo
+De la siguiente manera ejecutamos una funcion en otro hilo, con una **GoRutine**
+```go
+go nombreLentooo("Nahuel Costamagna")
+```
+Go no se queda esperando hasta que termine<br />
+**Channels**: canales que permiten enviar informacion hacia otra go rutine, es un espacio
+de memoria de dialogo en el que van a dialogar distintas rutinas<br />
