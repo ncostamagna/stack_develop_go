@@ -2,11 +2,7 @@
 - [Introduccion](#introduccion)
 - [Instalaciones](#instalaciones)
 - [Go](#go)
-- [ES6](#es6)
-- [Sincronia vs Asicnronia](#sincronia-vs-asicnronia)
-- [Base de datos](#base-de-datos)
-- [Arquitectura Apis](#arquitectura-apis)
-- [Microservicios](#microservicios)
+- [Implementacion Proyecto Twitter](#implementacion-proyecto-twitter)
 
 
 <br />
@@ -114,3 +110,25 @@ go nombreLentooo("Nahuel Costamagna")
 Go no se queda esperando hasta que termine<br />
 **Channels**: canales que permiten enviar informacion hacia otra go rutine, es un espacio
 de memoria de dialogo en el que van a dialogar distintas rutinas<br />
+
+
+# Implementacion Proyecto Twitter
+
+### Importacion de paquetes locales
+Para cumplir eso debemos crear una estructura de carpetas<br />
+En la instalacion de Go tienen que estar las carpetas **bin, pkg y src**<br /><br />
+En la carpeta **src** en sistema ira cargando crpetas a medida que vayamos haciendo importaciones
+en el sistemas, creamos la carpeta **github.com** y ahi el usuario de githab y adentro el proyecto del repositorio<br />
+
+
+```sh
+go get -u github.com/gorilla/mux # para descargar el paquete, enrutador
+go get github.com/githubnemo/CompileDaemon # como nodemon
+```
+
+Desde la consola ejecutamos lo siguiente y correra como nodemon
+```sh
+CompileDeamon # Ejecutar desde gitBash
+```
+
+https://www.youtube.com/watch?v=pQAV8A9KLwk
