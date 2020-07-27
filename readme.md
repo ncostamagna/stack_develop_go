@@ -35,6 +35,7 @@ Obliga al desarrollador a realizar buenas practicas<br />
 Instalamos Go de https://golang.org/ <br />
 
 Instalamos la extension **Go, Go Outliner y Go Autotest (chequeando nuestro programa)** de visual studio code <br />
+**Kite Autocomplete Plugin Python** es para Python pero nos sirve para Go<br />
 
 # Go
 
@@ -129,7 +130,7 @@ go get github.com/githubnemo/CompileDaemon # como nodemon
 Desde la consola ejecutamos lo siguiente y correra como nodemon
 ```sh
 CompileDeamon # Ejecutar desde gitBash
-CompileDeamon -command="Simple-api-rest.exe" # Obtengo el cambio autom
+CompileDeamon -command="Simple-api-rest.exe" # Obtengo el cambio automente
 ```
 
 https://www.youtube.com/watch?v=pQAV8A9KLwk

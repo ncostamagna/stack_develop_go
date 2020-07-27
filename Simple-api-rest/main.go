@@ -57,8 +57,8 @@ func getTasks(w http.ResponseWriter, r *http.Request) {
 }
 
 func getOneTask(w http.ResponseWriter, r *http.Request) {
-	vars := mux.Vars(r)
-	taskID, err := strconv.Atoi(vars["id"])
+	vars := mux.Vars(r) // me devuelve los parametros
+	taskID, err := strconv.Atoi(vars["id"]) // convierte a entero
 	if err != nil {
 		return
 	}
@@ -102,8 +102,8 @@ func updateTask(w http.ResponseWriter, r *http.Request) {
 }
 
 func deleteTask(w http.ResponseWriter, r *http.Request) {
-	vars := mux.Vars(r)
-	taskID, err := strconv.Atoi(vars["id"])
+	vars := mux.Vars(r) // me devuelve los parametros
+	taskID, err := strconv.Atoi(vars["id"]) // convierte a entero
 
 	if err != nil {
 		fmt.Fprintf(w, "Invalid User ID")
@@ -112,7 +112,7 @@ func deleteTask(w http.ResponseWriter, r *http.Request) {
 
 	for i, t := range tasks {
 		if t.ID == taskID {
-			tasks = append(tasks[:i], tasks[i+1:]...)
+			tasks = append(tasks[:i], tasks[i+1:]...) // concateno los arreglos
 			fmt.Fprintf(w, "The task with ID %v has been remove successfully", taskID)
 		}
 	}
