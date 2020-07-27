@@ -129,6 +129,7 @@ go get github.com/githubnemo/CompileDaemon # como nodemon
 Desde la consola ejecutamos lo siguiente y correra como nodemon
 ```sh
 CompileDeamon # Ejecutar desde gitBash
+CompileDeamon -command="Simple-api-rest.exe" # Obtengo el cambio autom
 ```
 
 https://www.youtube.com/watch?v=pQAV8A9KLwk
