@@ -61,6 +61,8 @@ numero6, numero7, numero8, numero9 := 4, 12, 5, "Texto"
 numero2 = int("2") // convierto a 2 entero
 texto = fmt.Sprintf("%d", numero)
 
+// tambien podemos declarar constantes
+const pi float64 = 3.14159265359
 ```
 Hay una libreria para convertir que se llama **strconv**<br />
 
