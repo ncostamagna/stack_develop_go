@@ -37,7 +37,7 @@ Instalamos Go de https://golang.org/ <br />
 Instalamos la extension **Go, Go Outliner y Go Autotest (chequeando nuestro programa)** de visual studio code <br />
 **Kite Autocomplete Plugin Python** es para Python pero nos sirve para Go<br />
 
-# Go
+# Go Fundamentos
 
 Ejecuciones para correr el programa
 
@@ -48,7 +48,7 @@ go run main.go
 go build main.go # Genero el ejecutable
 ```
 
-### Variables
+# Variables
 Se inicializan en cero, blanco o false<br />
 Si no uso las variables el programa no corre
 ```go
@@ -66,11 +66,11 @@ const pi float64 = 3.14159265359
 ```
 Hay una libreria para convertir que se llama **strconv**<br />
 
-### Funciones
+# Funciones
 Todo con funciones, no existen metodos (son funciones en si misma)<br />
 Alojamos un dato en **_** cuando no vamos a usarlo<br />
 
-### Vectores
+# Vectores
 
 **slice**: Vectores dinamicos, puedo ampiar la dimension en tiempo de ejecucion
 ```go
@@ -82,7 +82,7 @@ elementos := make(tipo,largo,capacidad maxima)
 len(elementos) //tamaño
 cap(elementos) //capacidad
 ```
-### Interfaces
+# Interfaces
 Nos ayudan a definir comportamientos, operaciones y conductas<br />
 Se definen los metodos que vamos autilizar para implementar esa interface<br />
 Implementar el mismo comportamiento a objetos que no tienen relacion entre si<br />
@@ -102,10 +102,10 @@ type animal interface{
 }
 ```
 
-### Recursion
+# Recursion
 Funcion que se llama a si misma
 
-### Asincronismo
+# Asincronismo
 De la siguiente manera ejecutamos una funcion en otro hilo, con una **GoRutine**
 ```go
 go nombreLentooo("Nahuel Costamagna")
@@ -114,10 +114,25 @@ Go no se queda esperando hasta que termine<br />
 **Channels**: canales que permiten enviar informacion hacia otra go rutine, es un espacio
 de memoria de dialogo en el que van a dialogar distintas rutinas<br />
 
+# Punteros
+Direccion de memoria, en lugar del valor obtenemos la direccion donde esta el valor, nos sirve para 
+modificar el mismo dato en diferentes partes del codigo<br />
+Para definir un puntero utilizamos *<br />
+Para extraer la direccion de memoria utilizamos &
+```go
+var x,y *int
+entero := 5
+x = &entero // accede a la direccion de memoria
+y = &entero
+
+*x = 20
+
+// ahora al imprimir entero, x o y me va a devolver 20
+```
 
 # Implementacion Proyecto Twitter
 
-### Importacion de paquetes locales
+# Importacion de paquetes locales
 Para cumplir eso debemos crear una estructura de carpetas<br />
 En la instalacion de Go tienen que estar las carpetas **bin, pkg y src**<br /><br />
 En la carpeta **src** en sistema ira cargando crpetas a medida que vayamos haciendo importaciones
