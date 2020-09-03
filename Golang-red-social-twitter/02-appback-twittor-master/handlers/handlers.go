@@ -6,6 +6,9 @@ import (
 	"os"
 
 	"github.com/gorilla/mux"
+
+	// No es que lo va a buscar a github, lo va a ir a buscar a lo que
+	// venga despues de la carpeta /go/src
 	"github.com/ptilotta/twittor/middlew"
 	"github.com/ptilotta/twittor/routers"
 	"github.com/rs/cors"

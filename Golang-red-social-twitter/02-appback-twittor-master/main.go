@@ -3,6 +3,7 @@ package main
 import (
 	"log"
 
+	// paquetes locales
 	"github.com/ptilotta/twittor/bd"
 	"github.com/ptilotta/twittor/handlers"
 )

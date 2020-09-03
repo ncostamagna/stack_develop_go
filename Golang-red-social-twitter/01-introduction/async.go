@@ -34,11 +34,14 @@ func nombreLentooo(nombre string){
 }
 
 func bucle(canal chan time.Duration){
+	
 	inicio := time.Now()
+
 	for i:=0; i<1000000000000000; i++{
 
 	}
 
 	final:=time.Now()
 	canal <- final.Sub(inicio)
+
 }

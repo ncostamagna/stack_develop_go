@@ -132,6 +132,20 @@ y = &entero
 
 # Implementacion Proyecto Twitter
 
+- hacemos primero la configuracion a la base de datos en conexionDB
+- hacemos el handlers para el router
+
+
+# packages
+
+#### context
+no existen variables globales, dentro del llamado de una api Go creo un contexto, es un 
+espacio en memoria donde voy a ir compartiendo cosas, nos sirven para comunicar informacion 
+
+#### log
+para generar logs
+
+
 # Importacion de paquetes locales
 Para cumplir eso debemos crear una estructura de carpetas<br />
 En la instalacion de Go tienen que estar las carpetas **bin, pkg y src**<br /><br />
@@ -148,6 +162,20 @@ Desde la consola ejecutamos lo siguiente y correra como nodemon
 ```sh
 CompileDeamon # Ejecutar desde gitBash
 CompileDeamon -command="Simple-api-rest.exe" # Obtengo el cambio automente
+```
+
+Importaciones
+```sh
+# MongoDB
+go get go.mongodb.org/mongo-driver/mongo
+go get go.mongodb.org/mongo-driver/mongo/options
+go get go.mongodb.org/mongo-driver/bson
+go get go.mongodb.org/mongo-driver/bson/primitive
+
+go get golang.org/x/crypto/bcrypt
+go get github.com/gorilla/mux
+go get github.com/dgrijalva/jwt-go
+
 ```
 
 https://www.youtube.com/watch?v=pQAV8A9KLwk

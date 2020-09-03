@@ -13,6 +13,7 @@ var MongoCN = ConectarBD()
 var clientOptions = options.Client().ApplyURI("mongodb+srv://root:EntrenamientoTwitter@twitter-kb2wp.mongodb.net/test?retryWrites=true&w=majority")
 
 /*ConectarBD es la función que me permite conectar la BD */
+// la funcion va a devolver un *mongo.Client
 func ConectarBD() *mongo.Client {
 	client, err := mongo.Connect(context.TODO(), clientOptions)
 	if err != nil {
