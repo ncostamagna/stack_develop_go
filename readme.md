@@ -1,7 +1,17 @@
 # Indice
 - [Introduccion](#introduccion)
 - [Instalaciones](#instalaciones)
-- [Go](#go)
+- [Go Fundamentos](#go-fundamentos)
+- [Variables](#variables)
+- [Funciones](#funciones)
+- [Vectores](#vectores)
+- [Interfaces](#interfaces)
+- [Recursion](#recursion)
+- [Asincronismo](#asincronismo)
+- [Punteros](#punteros)
+- [Base de datos](#base-de-datos)
+- [Packages](#packages)
+- [Importacion de paquetes locales](#importacion-de-paquetes-locales)
 - [Implementacion Proyecto Twitter](#implementacion-proyecto-twitter)
 
 
@@ -130,13 +140,32 @@ y = &entero
 // ahora al imprimir entero, x o y me va a devolver 20
 ```
 
-# Implementacion Proyecto Twitter
-
-- hacemos primero la configuracion a la base de datos en conexionDB
-- hacemos el handlers para el router
 
 
-# packages
+# Base de datos
+
+### Mongo
+
+```go
+/*
+   con formato indicamos
+   bson: el nombre del campo en la base de datos, datos entrada
+         a la base
+   omitempty: si viene vacio lo omite
+   json: me lo va a devolver como id, datos de salida
+*/
+type Usuario struct {
+//nombre          tipo dato          formato      
+	ID              primitive.ObjectID `bson:"_id,omitempty" json:"id"`
+	Nombre          string             `bson:"nombre" json:"nombre,omitempty"`
+	Apellidos       string             `bson:"apellidos" json:"apellidos,omitempty"`
+}
+```
+
+
+
+
+# Packages
 
 #### context
 no existen variables globales, dentro del llamado de una api Go creo un contexto, es un 
@@ -179,3 +208,9 @@ go get github.com/dgrijalva/jwt-go
 ```
 
 https://www.youtube.com/watch?v=pQAV8A9KLwk
+
+
+# Implementacion Proyecto Twitter
+
+- hacemos primero la configuracion a la base de datos en conexionDB
+- hacemos el handlers para el router
