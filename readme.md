@@ -47,6 +47,29 @@ Instalamos Go de https://golang.org/ <br />
 Instalamos la extension **Go, Go Outliner y Go Autotest (chequeando nuestro programa)** de visual studio code <br />
 **Kite Autocomplete Plugin Python** es para Python pero nos sirve para Go<br />
 
+<br />
+Siempre que clono un proyecto de github debo crear las carpetas a partir de el src 
+donde tengo mi GOPATH,
+si bajo un projecto que es gitlab.com/ncostamagna/sarasa deberia guardarlo en:<br />
+**${GOPATH}/src/gitlab.com/ncostamagna/sarasa**
+```
+GOPATH
+   /src
+      gitlab.com
+         username
+            repo
+      github.com
+         username
+            repo
+```
+Las variables de entorno se deben configurar de la siguientem manera
+
+```sh
+GOROOT=/usr/local/go # Donde esta instalado go
+GOPATH=/home/nahuel/project # Donde estan mis proyectos
+PATH=${GOROOT}/bin:${PATH}
+```
+
 # Go Fundamentos
 
 Ejecuciones para correr el programa
@@ -173,6 +196,13 @@ espacio en memoria donde voy a ir compartiendo cosas, nos sirven para comunicar 
 
 #### log
 para generar logs
+
+#### gin-gonic
+HTTP web framework, buena performace
+```sh
+go get -u github.com/gin-gonic/gin
+```
+Tambien podriamos usar gorilla mux
 
 
 # Importacion de paquetes locales
