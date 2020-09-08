@@ -202,7 +202,7 @@ HTTP web framework, buena performace
 ```sh
 go get -u github.com/gin-gonic/gin
 ```
-Tambien podriamos usar gorilla mux
+Tambien podriamos usar gorilla mux, pero en mux tenemos que desarrollar los benchmarks (puntos de referencia) de los diferentes http serves
 
 
 # Importacion de paquetes locales
