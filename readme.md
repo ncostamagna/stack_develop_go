@@ -162,7 +162,6 @@ func main() {
 	fmt.Println(v.Abs())
 	fmt.Println(v.X)
 }
-
 ```
 
 # Vectores
