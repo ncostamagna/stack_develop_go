@@ -128,6 +128,42 @@ func (p *poly) reset() {
 var p poly
 p.reset()
 ```
+https://stackoverflow.com/questions/31561369/how-do-i-declare-a-function-pointer-to-a-method-in-go
+
+```go
+package main
+
+import (
+	"fmt"
+	"math"
+)
+
+type Vertex struct {
+	X, Y float64
+}
+
+// el valor X no va a ser afectado fuera de la funcion
+func (v Vertex) Abs() float64 {
+	v.X = 6
+	fmt.Println(v.X)
+	return math.Sqrt(v.X*v.X + v.Y*v.Y)
+}
+
+// el valor X sera afectado fuera de la funcion
+func (v *Vertex) Scale(f float64) {
+   v.X = 5
+	fmt.Println(v.X)
+}
+
+func main() {
+	v := Vertex{3, 4}
+	v.Scale(10)
+	fmt.Println(v.X)
+	fmt.Println(v.Abs())
+	fmt.Println(v.X)
+}
+
+```
 
 # Vectores
 
@@ -236,7 +272,7 @@ func Create(c *gin.Context) {
 	// retornamos
 	c.JSON(http.StatusCreated, result.Marshall(c.GetHeader("X-Public") == "true"))
 }
-``
+```
 
 # Importacion de paquetes locales
 Para cumplir eso debemos crear una estructura de carpetas<br />
