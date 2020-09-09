@@ -52,7 +52,8 @@ Siempre que clono un proyecto de github debo crear las carpetas a partir de el s
 donde tengo mi GOPATH,
 si bajo un projecto que es gitlab.com/ncostamagna/sarasa deberia guardarlo en:<br />
 **${GOPATH}/src/gitlab.com/ncostamagna/sarasa**
-```
+
+```sh
 GOPATH
    /src
       gitlab.com
