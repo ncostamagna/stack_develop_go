@@ -1,8 +1,8 @@
 package app
 
 import (
-	"github.com/gin-gonic/gin"
 	"github.com/federicoleon/bookstore_utils-go/logger"
+	"github.com/gin-gonic/gin"
 )
 
 var (

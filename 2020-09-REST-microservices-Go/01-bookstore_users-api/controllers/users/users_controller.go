@@ -1,13 +1,14 @@
 package users
 
 import (
-	"github.com/gin-gonic/gin"
 	"net/http"
+	"strconv"
+
+	"github.com/federicoleon/bookstore_oauth-go/oauth"
 	"github.com/federicoleon/bookstore_users-api/domain/users"
 	"github.com/federicoleon/bookstore_users-api/services"
-	"strconv"
-	"github.com/federicoleon/bookstore_oauth-go/oauth"
 	"github.com/federicoleon/bookstore_utils-go/rest_errors"
+	"github.com/gin-gonic/gin"
 )
 
 func getUserId(userIdParam string) (int64, rest_errors.RestErr) {
@@ -31,6 +32,7 @@ func Create(c *gin.Context) {
 		c.JSON(saveErr.Status(), saveErr)
 		return
 	}
+	// retornamos
 	c.JSON(http.StatusCreated, result.Marshall(c.GetHeader("X-Public") == "true"))
 }
 

@@ -102,6 +102,31 @@ Hay una libreria para convertir que se llama **strconv**<br />
 # Funciones
 Todo con funciones, no existen metodos (son funciones en si misma)<br />
 Alojamos un dato en **_** cuando no vamos a usarlo<br />
+```go
+// funcion getStockPriceChange
+// params (prevPrice, currentPrice float64)
+// retorna (float64, float64)
+func getStockPriceChange(prevPrice, currentPrice float64) (float64, float64) {
+	change := currentPrice - prevPrice
+	percentChange := (change / prevPrice) * 100
+	return change, percentChange
+}
+```
+```go
+// generamos un metodo reset para poly
+type poly struct {
+    coeffs [256]uint16
+}
+
+func (p *poly) reset() {
+    for i := range p.coeffs {
+        p.coeffs[i] = 0
+    }
+}
+
+var p poly
+p.reset()
+```
 
 # Vectores
 
@@ -203,7 +228,14 @@ HTTP web framework, buena performace
 go get -u github.com/gin-gonic/gin
 ```
 Tambien podriamos usar gorilla mux, pero en mux tenemos que desarrollar los benchmarks (puntos de referencia) de los diferentes http serves
-
+```go
+// controller
+// viene de una interface, debemos agregarle *gin.Context
+func Create(c *gin.Context) {
+	// retornamos
+	c.JSON(http.StatusCreated, result.Marshall(c.GetHeader("X-Public") == "true"))
+}
+``
 
 # Importacion de paquetes locales
 Para cumplir eso debemos crear una estructura de carpetas<br />
