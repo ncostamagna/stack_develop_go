@@ -162,6 +162,19 @@ func main() {
 	fmt.Println(v.Abs())
 	fmt.Println(v.X)
 }
+
+
+// utilizo el puntero de usuario, lo que modifique aca
+// se va a ver reflejado afuera
+func (user *User) Get() rest_errors.RestErr {
+   stmt, err := users_db.Client.Prepare(queryGetUser)
+}
+
+// Es una copia de usuario, lo que modifique aca no se va a 
+// ver reflejado afuera
+func (user User) Get() rest_errors.RestErr {
+   stmt, err := users_db.Client.Prepare(queryGetUser)
+}
 ```
 
 # Vectores

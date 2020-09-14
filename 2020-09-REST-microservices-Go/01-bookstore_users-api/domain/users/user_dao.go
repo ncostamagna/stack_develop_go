@@ -19,6 +19,11 @@ const (
 	queryFindByEmailAndPassword = "SELECT id, first_name, last_name, email, date_created, status FROM users WHERE email=? AND password=? AND status=?"
 )
 
+
+// Si esto lo ponemos como (user User) sin el puntero
+// no me va a modificar el dato fuera de la funcion
+// si quiero que los datos se vean reflejados fuera de la funcion
+// deberia agregarlo como puntero
 func (user *User) Get() rest_errors.RestErr {
 	stmt, err := users_db.Client.Prepare(queryGetUser)
 	if err != nil {
