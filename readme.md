@@ -12,6 +12,7 @@
 - [Base de datos](#base-de-datos)
 - [Packages](#packages)
 - [Importacion de paquetes locales](#importacion-de-paquetes-locales)
+- [Test](#test)
 - [Implementacion Proyecto Twitter](#implementacion-proyecto-twitter)
 
 
@@ -320,6 +321,26 @@ go get github.com/dgrijalva/jwt-go
 
 https://www.youtube.com/watch?v=pQAV8A9KLwk
 
+# Test
+Para implementar test utilizamos **testing** (forma parte de go)<br />
+Utilizamos github.com/stretchr/testify/assert" para facilitarnos el manejo de assert
+
+```go
+import (
+   "testing"
+   "github.com/stretchr/testify/assert"
+)
+
+// testeamos las constantes
+func TestOauthConstants(t *testing.T) {
+	assert.EqualValues(t, "X-Public", headerXPublic)
+	assert.EqualValues(t, "X-Client-Id", headerXClientId)
+	assert.EqualValues(t, "X-Caller-Id", headerXCallerId)
+	assert.EqualValues(t, "access_token", paramAccessToken)
+}
+
+
+```
 
 # Implementacion Proyecto Twitter
 

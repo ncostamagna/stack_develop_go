@@ -9,14 +9,18 @@ import (
 	"github.com/mercadolibre/golang-restclient/rest"
 )
 
+// Testing Main
 func TestMain(m *testing.M) {
 	fmt.Println("about to start oauth tests")
 
+	// mock request
+	// resultados del mock
 	rest.StartMockupServer()
 
 	os.Exit(m.Run())
 }
 
+// Testeamos las constantess
 func TestOauthConstants(t *testing.T) {
 	assert.EqualValues(t, "X-Public", headerXPublic)
 	assert.EqualValues(t, "X-Client-Id", headerXClientId)
@@ -51,7 +55,13 @@ func TestGetCallerNoError(t *testing.T) {
 }
 
 func TestGetAccessTokenInvalidRestclientResponse(t *testing.T) {
+
+	// limpiamos todos los muchs que tenemos
+	// lo primero que debemos hacer
 	rest.FlushMockups()
+
+	// donde vamos a disparar el request
+	// esto es para el rest de autentificacion de mercado libre
 	rest.AddMockups(&rest.Mock{
 		HTTPMethod:   http.MethodGet,
 		URL:          "http://localhost:8080/oauth/access_token/AbC123",
