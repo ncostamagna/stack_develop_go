@@ -13,8 +13,6 @@
 - [Packages](#packages)
 - [Importacion de paquetes locales](#importacion-de-paquetes-locales)
 - [Test](#test)
-- [Implementacion Proyecto Twitter](#implementacion-proyecto-twitter)
-
 
 <br />
 
@@ -341,8 +339,3 @@ func TestOauthConstants(t *testing.T) {
 
 
 ```
-
-# Implementacion Proyecto Twitter
-
-- hacemos primero la configuracion a la base de datos en conexionDB
-- hacemos el handlers para el router
