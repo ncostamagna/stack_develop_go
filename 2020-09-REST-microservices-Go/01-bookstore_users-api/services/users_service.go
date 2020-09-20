@@ -2,17 +2,19 @@ package services
 
 import (
 	"github.com/federicoleon/bookstore_users-api/domain/users"
-	"github.com/federicoleon/bookstore_users-api/utils/date_utils"
 	"github.com/federicoleon/bookstore_users-api/utils/crypto_utils"
+	"github.com/federicoleon/bookstore_users-api/utils/date_utils"
 	"github.com/federicoleon/bookstore_utils-go/rest_errors"
 )
 
+// Es una buena practica manejarlo de esta manera, mas performante
 var (
 	UsersService usersServiceInterface = &usersService{}
 )
 
 type usersService struct{}
 
+// generamos interface, nos facilita para el manejo de las mocks
 type usersServiceInterface interface {
 	GetUser(int64) (*users.User, rest_errors.RestErr)
 	CreateUser(users.User) (*users.User, rest_errors.RestErr)

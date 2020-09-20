@@ -11,6 +11,7 @@
 - [Punteros](#punteros)
 - [Base de datos](#base-de-datos)
 - [Packages](#packages)
+- [Logger](#logger)
 - [Importacion de paquetes locales](#importacion-de-paquetes-locales)
 - [Test](#test)
 
@@ -284,6 +285,11 @@ func Create(c *gin.Context) {
 	c.JSON(http.StatusCreated, result.Marshall(c.GetHeader("X-Public") == "true"))
 }
 ```
+
+# Logger
+
+### Zap
+Podemos implementar zap para manejar los logs
 
 # Importacion de paquetes locales
 Para cumplir eso debemos crear una estructura de carpetas<br />

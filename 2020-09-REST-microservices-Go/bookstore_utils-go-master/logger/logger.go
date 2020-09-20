@@ -2,10 +2,11 @@ package logger
 
 import (
 	"fmt"
-	"go.uber.org/zap"
-	"go.uber.org/zap/zapcore"
 	"os"
 	"strings"
+
+	"go.uber.org/zap"
+	"go.uber.org/zap/zapcore"
 )
 
 const (
@@ -27,6 +28,7 @@ type logger struct {
 }
 
 func init() {
+	// configuraciones del log
 	logConfig := zap.Config{
 		OutputPaths: []string{getOutput()},
 		Level:       zap.NewAtomicLevelAt(getLevel()),

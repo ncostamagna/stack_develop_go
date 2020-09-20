@@ -36,8 +36,8 @@ func (user *User) Marshall(isPublic bool) interface{} {
 		}
 	}
 
-	userJson, _ := json.Marshal(user)
+	userJson, _ := json.Marshal(user) // convertimos a JSON
 	var privateUser PrivateUser
-	json.Unmarshal(userJson, &privateUser)
+	json.Unmarshal(userJson, &privateUser) // poblamos la struct
 	return privateUser
 }

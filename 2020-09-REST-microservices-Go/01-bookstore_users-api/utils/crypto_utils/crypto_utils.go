@@ -5,9 +5,10 @@ import (
 	"encoding/hex"
 )
 
+// encriptamos password
 func GetMd5(input string) string {
 	hash := md5.New()
 	defer hash.Reset()
-	hash.Write([]byte(input))
-	return hex.EncodeToString(hash.Sum(nil))
+	hash.Write([]byte(input))                // encriptamos
+	return hex.EncodeToString(hash.Sum(nil)) // usamos hex para retornar un string
 }
