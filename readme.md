@@ -345,3 +345,21 @@ func TestOauthConstants(t *testing.T) {
 
 
 ```
+
+Para ejecutar las pruebas unitarias lo hacemos con el siguiente comando
+
+```sh
+go test
+
+# Se queremos ver mas detalles
+go test -v
+```
+
+Si colocamos al inicio del archivo test lo siguiente
+```go
+// +build integration
+```
+Podemos correr solo ese de la siguiente manera
+```sh
+go test -tags=integration
+```
