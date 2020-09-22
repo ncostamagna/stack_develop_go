@@ -10,6 +10,7 @@ github.com/federicoleon/bookstore_oauth-go v0.0.0-20191115215057-d6e9e471b4ef h1
 github.com/federicoleon/bookstore_oauth-go v0.0.0-20191115215057-d6e9e471b4ef/go.mod h1:J86wMJmcD7FlZ/37wYdE9XQMlKKOW+foyIMTE8ZKFd4=
 github.com/federicoleon/bookstore_utils-go v0.0.0-20191115214654-f8b94f132ebf h1:rmMXJsRtSt562GpDsyo4Vj8sziEqxdeE7ER2DiIS/5s=
 github.com/federicoleon/bookstore_utils-go v0.0.0-20191115214654-f8b94f132ebf/go.mod h1:2eaPBoOv7yMDnXExZ9Wp7V7uj/ZR2FL4ynqY2a+Rr9w=
+github.com/federicoleon/bookstore_utils-go v0.0.0-20200406081703-a9b52b6e34e6 h1:f9Fgp6DR56gUorldcxshOBvZQsJ7o4NptGgPTKJuDCM=
 github.com/gin-contrib/sse v0.1.0 h1:Y/yl/+YNO8GZSjAhjMsSuLt29uWRFHdHYUb5lYOV9qE=
 github.com/gin-contrib/sse v0.1.0/go.mod h1:RHrZQHXnP2xjPF+u1gW/2HnVO7nvIa9PG3Gm+fLHvGI=
 github.com/gin-gonic/gin v1.6.2 h1:88crIK23zO6TqlQBt+f9FrPJNKm9ZEr7qjp9vl/d5TM=
