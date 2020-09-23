@@ -326,9 +326,38 @@ go get github.com/dgrijalva/jwt-go
 https://www.youtube.com/watch?v=pQAV8A9KLwk
 
 # Test
+Existen 3 tipos
+![Events](images/1.png)
+
+### Unit
+Pruebas a mas bajo nivel y con pruebas aisladas de la aplicacion, existem 2 tipos, white box y black box
+
+### White Box
+accedemos y verificamos las variables, metodos, funciones privadas. Probamos el acceso a estas cosas privadas
+
+### Black Box
+Probamos las publicas
+<br /><br />
+
+google nos recomienda que usemos **White Box**, porque de estya maera podemos probar toda nuestra apivavion
+
 Para implementar test utilizamos **testing** (forma parte de go)<br />
 Utilizamos github.com/stretchr/testify/assert" para facilitarnos el manejo de assert
 
+
+### Integration
+Generar Mocks de funciones para ver como se integran con las funciones desarrolladas en la aplicacion, por lo general se hacen desde abajo hacia arriba, se prueba primero el modelo, luego el modelo y el repositorio, luego el modelo, repositorio y servicio, etc...
+
+### Functional
+Ultimas pruebas cuando ya nuestra aplicacion esta corriendo, corremos la aplicacion le mandamos request y la probamos completamente, logicamente no son pruebas muy ricas o complejas
+
+![Events](images/2.png)
+
+Confiaremos mas en las pruebas uniarias, luego en las integrales y por ultimo en las funcionales
+
+![Events](images/3.png)
+
+# LLEGUE HASTA 18:00
 ```go
 import (
    "testing"
