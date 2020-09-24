@@ -357,7 +357,6 @@ Confiaremos mas en las pruebas uniarias, luego en las integrales y por ultimo en
 
 ![Events](images/3.png)
 
-# LLEGUE HASTA 18:00
 ```go
 import (
    "testing"
