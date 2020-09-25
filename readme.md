@@ -356,7 +356,7 @@ Ultimas pruebas cuando ya nuestra aplicacion esta corriendo, corremos la aplicac
 Confiaremos mas en las pruebas uniarias, luego en las integrales y por ultimo en las funcionales
 
 ![Events](images/3.png)
-
+ 
 ```go
 import (
    "testing"
