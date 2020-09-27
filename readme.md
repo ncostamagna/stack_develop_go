@@ -392,4 +392,4 @@ Podemos correr solo ese de la siguiente manera
 go test -tags=integration
 ```
 
-pij
+En el coverger no aparecen las constantes que definimos, pero es una buena practica validar tambien el valor de las constantes porque forman parte de nuestra logica de negocio
