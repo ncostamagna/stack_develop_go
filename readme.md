@@ -221,6 +221,31 @@ Go no se queda esperando hasta que termine<br />
 **Channels**: canales que permiten enviar informacion hacia otra go rutine, es un espacio
 de memoria de dialogo en el que van a dialogar distintas rutinas<br />
 
+```go
+// con las flechitas podemos obtener el valor de algun hilo
+
+timeoutChan := make(chan bool, 1)
+defer close(timeoutChan)
+   
+go func() {
+   BubbleSort(elements)
+   timeoutChan <- false // asignamos false
+}()
+
+// agregamos timeout en otro hilo
+go func() {
+   time.Sleep(1000 * time.Millisecond)
+   timeoutChan <- true //asignamos false
+}()
+
+// validamos lo primero que recibimos
+// si recibimos false termino bien el ordenamiento, sino termino primero el sleep
+if <-timeoutChan {
+   assert.Fail(t, "bubble sort took more than 1000 ms")
+   return
+}
+
+```
 # Punteros
 Direccion de memoria, en lugar del valor obtenemos la direccion donde esta el valor, nos sirve para 
 modificar el mismo dato en diferentes partes del codigo<br />
@@ -285,6 +310,11 @@ func Create(c *gin.Context) {
 	c.JSON(http.StatusCreated, result.Marshall(c.GetHeader("X-Public") == "true"))
 }
 ```
+### Resty
+Cliente HTTP Simple para REST, nos proporciona tambien Moockings utilizando **httpmock** library (tambien debemos importarla)
+
+### Golang-restclient
+Cliente HTTP de mercado libre, tiene mocks y es bastante comleto
 
 # Logger
 
@@ -392,4 +422,48 @@ Podemos correr solo ese de la siguiente manera
 go test -tags=integration
 ```
 
-En el coverger no aparecen las constantes que definimos, pero es una buena practica validar tambien el valor de las constantes porque forman parte de nuestra logica de negocio
+En el coverger no aparecen las constantes que definimos, pero es una buena practica validar tambien el valor de las constantes porque forman parte de nuestra logica de negocio<br />
+
+### BenchMarks
+/benchmarks/ <br />
+Podemos medir la performance de nuestro codigo, la nombramos como **Benchmark** + **Nombre de nuestra funcion**
+
+```go
+func BenchmarkBubbleSort(b *testing.B) {
+	elements := GetElements(10000)
+	for i := 0; i < b.N; i++ {
+		BubbleSort(elements)
+	}
+}
+
+func BenchmarkSort(b *testing.B) {
+	elements := GetElements(10000)
+	for i := 0; i < b.N; i++ {
+		Sort(elements)
+	}
+}
+```
+Nos mide la velocidad en que termina en nanosegundos por operaciones, ejecuta la funcion 100.000.000 veces en este caso (BenchmarkBubbleSort)<br /><br />
+
+BenchmarkBubbleSort - 100.000.000 -  23 ns/op<br />
+BenchmarkSort       -  10.000.000 - 250 ns/op
+<br /><br />
+Para correrlo ejecutamos
+
+```sh
+go test -bench=.
+
+# Sincronizado 
+go test -run=Synchronize -bench=.
+
+# Guardamos en archivo
+go test -run=Synchronize -bench=. > bench.old
+
+# Corremos una en particular
+go test -run=Synchronize -bench=BenchmarkSort
+
+# Definimos tiempo para que procese
+go test -bench=. -benchtime=20s
+```
+
+# LLegamos hasta 24:00

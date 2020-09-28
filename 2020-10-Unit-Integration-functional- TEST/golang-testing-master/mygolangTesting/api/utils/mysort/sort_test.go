@@ -21,16 +21,21 @@ func TestBubbleSort(t *testing.T) {
 
 	timeoutChan := make(chan bool, 1)
 	defer close(timeoutChan)
+
+	// Ejecutamos dentro de un hilo
 	go func() {
 		BubbleSort(elements)
 		timeoutChan <- false
 	}()
 
+	// agregamos timeout en otro hilo
 	go func() {
 		time.Sleep(1000 * time.Millisecond)
 		timeoutChan <- true
 	}()
 
+	// validamos lo primero que recibimos
+	// si recibimos false termino bien el ordenamiento, sino termino primero el sleep
 	if <-timeoutChan {
 		assert.Fail(t, "bubble sort took more than 1000 ms")
 		return

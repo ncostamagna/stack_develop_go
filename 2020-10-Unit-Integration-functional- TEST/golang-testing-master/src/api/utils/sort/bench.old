@@ -1,0 +1,6 @@
+goos: linux
+goarch: amd64
+BenchmarkBubbleSort-8   	  137788	      9214 ns/op
+BenchmarkSort-8         	    1959	    739945 ns/op
+PASS
+ok  	_/media/ncostamagna/Costamagna/Cursos/2017-Udemy/Go/2020-10-Unit-Integration-functional-_TEST/golang-testing-master/src/api/utils/sort	3.964s
