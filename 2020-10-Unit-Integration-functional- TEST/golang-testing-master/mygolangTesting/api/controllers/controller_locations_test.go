@@ -3,13 +3,14 @@ package controllers
 import (
 	"encoding/json"
 	"fmt"
-	"github.com/golang-testing/mygolangTesting/api/domain/locations"
-	"github.com/golang-testing/mygolangTesting/api/services"
-	"github.com/golang-testing/mygolangTesting/api/utils/errors"
 	"net/http"
 	"net/http/httptest"
 	"os"
 	"testing"
+
+	"github.com/golang-testing/mygolangTesting/api/domain/locations"
+	"github.com/golang-testing/mygolangTesting/api/services"
+	"github.com/golang-testing/mygolangTesting/api/utils/errors"
 
 	"github.com/gin-gonic/gin"
 	"github.com/mercadolibre/golang-restclient/rest"

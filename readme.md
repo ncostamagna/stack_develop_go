@@ -353,7 +353,13 @@ go get github.com/dgrijalva/jwt-go
 
 ```
 
-https://www.youtube.com/watch?v=pQAV8A9KLwk
+Siempre que definimos un init, solo tenemos que tener uno por paquete
+```go
+func init(){
+   sarasa
+}
+```
+este se va a ejecutar cuandl el paquete es importado
 
 # Test
 Existen 3 tipos
@@ -466,4 +472,24 @@ go test -run=Synchronize -bench=BenchmarkSort
 go test -bench=. -benchtime=20s
 ```
 
-# LLegamos hasta 24:00
+### Main
+Main de todas las pruebas que correran
+```go
+func TestMain(m *testing.M) {
+	rest.StartMockupServer()
+	os.Exit(m.Run())
+}
+```
+<br /><br /><br /><br />
+
+Para implementar pruebas unitarias con **gonnic** y **httptest**
+
+```go
+response := httptest.NewRecorder()
+c, _ := gin.CreateTestContext(response)
+c.Request, _ = http.NewRequest(http.MethodGet, "", nil)
+c.Params = gin.Params{
+   {Key: "country_ID", Value: "AR"},
+}
+GetCountry(c)
+```
