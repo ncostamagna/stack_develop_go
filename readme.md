@@ -13,6 +13,7 @@
 - [Packages](#packages)
 - [Logger](#logger)
 - [Importacion de paquetes locales](#importacion-de-paquetes-locales)
+- [Crear Package](#crear-package)
 - [Test](#test)
 
 <br />
@@ -316,6 +317,10 @@ Cliente HTTP Simple para REST, nos proporciona tambien Moockings utilizando **ht
 ### Golang-restclient
 Cliente HTTP de mercado libre, tiene mocks y es bastante comleto
 
+
+### Go-sqlmock
+para impementar todos los metodos que tenemos en la base de datos
+
 # Logger
 
 ### Zap
@@ -361,6 +366,17 @@ func init(){
 ```
 este se va a ejecutar cuandl el paquete es importado
 
+
+# Crear Package
+Para crear packages que luego utilizaremos en otro lado
+
+### Inicializar package
+```sh
+# Donde estara el package
+go mod init github.com/sarasa 
+
+```
+
 # Test
 Existen 3 tipos
 ![Events](images/1.png)
@@ -375,7 +391,7 @@ accedemos y verificamos las variables, metodos, funciones privadas. Probamos el 
 Probamos las publicas
 <br /><br />
 
-google nos recomienda que usemos **White Box**, porque de estya maera podemos probar toda nuestra apivavion
+google nos recomienda que usemos **White Box**, porque de esta manera podemos probar toda nuestra apivavion
 
 Para implementar test utilizamos **testing** (forma parte de go)<br />
 Utilizamos github.com/stretchr/testify/assert" para facilitarnos el manejo de assert
@@ -385,7 +401,8 @@ Utilizamos github.com/stretchr/testify/assert" para facilitarnos el manejo de as
 Generar Mocks de funciones para ver como se integran con las funciones desarrolladas en la aplicacion, por lo general se hacen desde abajo hacia arriba, se prueba primero el modelo, luego el modelo y el repositorio, luego el modelo, repositorio y servicio, etc...
 
 ### Functional
-Ultimas pruebas cuando ya nuestra aplicacion esta corriendo, corremos la aplicacion le mandamos request y la probamos completamente, logicamente no son pruebas muy ricas o complejas
+Ultimas pruebas cuando ya nuestra aplicacion esta corriendo, corremos la aplicacion le mandamos request y la probamos completamente, logicamente no son pruebas muy ricas o complejas<br />
+Las pruebas funcionales deben ir en un package diferente, ya que debemos probar el **Black Box** (solo en functional test)
 
 ![Events](images/2.png)
 

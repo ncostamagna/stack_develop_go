@@ -15,6 +15,11 @@ import (
 
 func TestGetCountriesnotFound(t *testing.T) {
 	// Mock
+	// No es necesario agregar los Mocks
+	// las agrego para probar el endpoint de mercadolibre en caso que se caiga
+	// internet y no pueda realizar las pruebas por ese motivo
+	// Para mi no deberian ir, las funcionales deberian ser pruebas completas
+	// si por alguna razon el endpoint esta caido tampoco vas a poder acceder desde prod
 	rest.FlushMockups()
 	rest.AddMockups(&rest.Mock{
 		URL:          "https://api.mercadolibre.com/countries/BI",
@@ -30,6 +35,8 @@ func TestGetCountriesnotFound(t *testing.T) {
 	assert.Nil(t, err)
 	assert.NotNil(t, response)
 	var apiErrors errors.APIerror
+
+	// para leer el body del response
 	bytes, _ := ioutil.ReadAll(response.Body)
 	fmt.Println(string(bytes))
 	err = json.Unmarshal(bytes, &apiErrors)
