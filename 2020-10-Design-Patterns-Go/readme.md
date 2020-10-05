@@ -5,6 +5,8 @@
 ### Single Responsibility Principle
 Cada uno tiene su responsabilidad, cada metodo hace algo y tiene una responsabilidad unica
 
+### Open Closed Principle
+Se abre por extension y se cierra por modifidacion, se genera una funcion para implementar los metodos que modifican dicho objeto, sin agregarlo como metodo del mismo. Hacemos una generica para todos los tipos de modificaciones que requiere el objeto
 
 
 # Builder
