@@ -46,11 +46,7 @@ func NewSquare(size int) *Square {
 	return &sq
 }
 
-func (s *Square) SetWidth(width int) {
-	s.width = width
-	s.height = width
-}
-
+// reemplazo las clases
 func (s *Square) SetHeight(height int) {
 	s.width = height
 	s.height = height
