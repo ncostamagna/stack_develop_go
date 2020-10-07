@@ -20,9 +20,9 @@ type Person struct {
 }
 
 type Info struct {
-	from *Person
+	from         *Person
 	relationship Relationship
-	to *Person
+	to           *Person
 }
 
 type RelationshipBrowser interface {
@@ -53,11 +53,11 @@ func (rs *Relationships) AddParentAndChild(parent, child *Person) {
 		Info{child, Child, parent})
 }
 
+// hish-level module
 type Research struct {
 	// relationships Relationships
 	browser RelationshipBrowser // low-level
 }
-
 
 func (r *Research) Investigate() {
 	//relations := r.relationships.relations
@@ -74,9 +74,9 @@ func (r *Research) Investigate() {
 }
 
 func main() {
-	parent := Person{"John" }
-	child1 := Person{ "Chris" }
-	child2 := Person{ "Matt" }
+	parent := Person{"John"}
+	child1 := Person{"Chris"}
+	child2 := Person{"Matt"}
 
 	// low-level module
 	relationships := Relationships{}
