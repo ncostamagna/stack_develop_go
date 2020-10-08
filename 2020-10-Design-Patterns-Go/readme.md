@@ -27,9 +27,12 @@ Las abstracciones no deberían depender de los detalles. Los detalles (implement
 Extrae el contructor de una clase y le pasa un Builder directamente, sin necesidar de tener varios parametros en la instancia de la clase, se genera un Builder, se van aregando los parametros ahi y luego se le pasa el Builder a la instancia de la clase
 
 # Factory
-Clase factory que se encarga de crear diferentes tipos de clase en base a algun/os parametro, debemos devolver siempre el puntero
+Clase factory que se encarga de crear diferentes tipos de clase en base a algun/os parametro, debemos devolver siempre el puntero (En caso de un struct)
 ```go
 func NewPerson(name string, age int) *Person {
 	return &Person{name, age}
 }
 ```
+
+# Prototype
+Replicar un diseño de objeto en varios, por ejemplo si tenemos Cars, Iphone, generamos un prototipo para cada uno
