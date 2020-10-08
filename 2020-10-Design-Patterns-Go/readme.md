@@ -35,4 +35,4 @@ func NewPerson(name string, age int) *Person {
 ```
 
 # Prototype
-Replicar un diseño de objeto en varios, por ejemplo si tenemos Cars, Iphone, generamos un prototipo para cada uno
+Replicar un diseño de objeto en varios, por ejemplo si tenemos Cars, Iphone, generamos un prototipo para cada uno. Nos permite **clonar** objetos para ser utilizado en otro lado
