@@ -24,7 +24,8 @@ Las abstracciones no deberían depender de los detalles. Los detalles (implement
 
 
 # Builder
-Extrae el contructor de una clase y le pasa un Builder directamente, sin necesidar de tener varios parametros en la instancia de la clase, se genera un Builder, se van aregando los parametros ahi y luego se le pasa el Builder a la instancia de la clase
+Extrae el contructor de una clase y le pasa un Builder directamente, sin necesidar de tener varios parametros en la instancia de la clase, se genera un Builder, se van aregando los parametros ahi y luego se le pasa el Builder a la instancia de la clase,
+el Builder va a tener bastante codigo complejo ya que va a tener el objetivo de construir todo para el objeto
 
 # Factory
 Clase factory que se encarga de crear diferentes tipos de clase en base a algun/os parametro, debemos devolver siempre el puntero (En caso de un struct)
@@ -36,3 +37,11 @@ func NewPerson(name string, age int) *Person {
 
 # Prototype
 Replicar un diseño de objeto en varios, por ejemplo si tenemos Cars, Iphone, generamos un prototipo para cada uno. Nos permite **clonar** objetos para ser utilizado en otro lado
+
+# Singleton
+Componente que tiene sentido tener solo uno en la aplicacion, uno unico, por ejemplo:<br />
+- Database repository
+- Object FActory
+<br />
+Tener todo en una sola instancia, prevenit crear copias adicionales esto crearia trabajo adicional a la aplicacion que no tendria sentido<br />
+Solo una instancia en toda la aplicacion
