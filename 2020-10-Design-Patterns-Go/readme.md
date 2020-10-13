@@ -45,3 +45,6 @@ Componente que tiene sentido tener solo uno en la aplicacion, uno unico, por eje
 <br />
 Tener todo en una sola instancia, prevenit crear copias adicionales esto crearia trabajo adicional a la aplicacion que no tendria sentido<br />
 Solo una instancia en toda la aplicacion
+
+# Adapter
+Se utiliza para transformar una interfaz en otra, de tal modo que una clase que no pueda utilizar la primera haga uso de ella a través de la segunda.
