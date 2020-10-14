@@ -48,3 +48,22 @@ Solo una instancia en toda la aplicacion
 
 # Adapter
 Se utiliza para transformar una interfaz en otra, de tal modo que una clase que no pueda utilizar la primera haga uso de ella a través de la segunda.
+
+# Bridge
+Previene el producto carteciano. <br />
+El patrón Bridge, también conocido como Handle/Body, es una técnica usada en programación para desacoplar una abstracción de su implementación, de manera que ambas puedan ser modificadas independientemente sin necesidad de alterar por ello la otra.<br /><br />
+Problema
+![Events](../images/4.png)
+Solucion
+![Events](../images/5.png)
+
+![Events](../images/6.png)
+
+# Composite
+El patrón Composite sirve para construir objetos complejos a partir de otros más simples y similares entre sí, gracias a la composición recursiva y a una estructura en forma de árbol.<br />
+Esto simplifica el tratamiento de los objetos creados, ya que al poseer todos ellos una interfaz común, se tratan todos de la misma manera.<br />
+Un claro ejemplo de uso extendido de este patrón se da en los entornos de programación 2D para aplicaciones gráficas. Un videojuego puede contener diferentes capas "layers" de sprites (como una capa de enemigos) pudiéndose invocar un método que actúe sobre toda esta capa de sprites a la vez (por ejemplo, para ocultarlos, darles un filtro de color etc.).<br /><br />
+En este caso tenemos Productos y cajas, que a la vez hay cajas mas pequeñas con mas productos, en este caso seria complicado conocer el precio total
+![Events](../images/7.png)
+Pero el patron composite nos indica para que trabajems con Productos y Cajas a travez de una interface en comun, que declarara (por ejemplo) el metodo calcular precio
+![Events](../images/8.png)
