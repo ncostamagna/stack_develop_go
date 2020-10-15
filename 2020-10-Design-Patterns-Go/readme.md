@@ -67,3 +67,10 @@ En este caso tenemos Productos y cajas, que a la vez hay cajas mas pequeñas con
 ![Events](../images/7.png)
 Pero el patron composite nos indica para que trabajems con Productos y Cajas a travez de una interface en comun, que declarara (por ejemplo) el metodo calcular precio
 ![Events](../images/8.png)
+
+# Decorator
+El patrón Decorator responde a la necesidad de añadir dinámicamente funcionalidad a un Objeto. Esto nos permite no tener que crear sucesivas clases que hereden de la primera incorporando la nueva funcionalidad, sino otras que la implementan y se asocian a la primera.<br />
+Problema<br/>
+![Events](../images/9.png)
+Solucion<br/>
+![Events](../images/10.png)
