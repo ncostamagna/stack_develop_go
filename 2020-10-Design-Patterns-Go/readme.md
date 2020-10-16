@@ -14,12 +14,12 @@ Todos los metodos de la super clase seran reemplazadas por la subclase, <br />
 Cada clase que hereda de otra puede usarse como su padre sin necesidad de conocer las diferencias entre ellas.
 
 ### Interface Segregation Principle
-Manejamos un objeto con una interfaz, si tenemos varios aracnidos como arañas, tarantulas y escorpiones tendriamos una interfaz aracnido que tiene las clases araña, tarantula y escorpiones. Tendriamos un problema utilizando el metodo telaaraña, lo implementariamos en todos y le podriamos un panic a escorpion el principio de ISP dice que sólo deberían conocer de éste aquellos métodos que realmente usan, y no aquellos que no necesitan usar, en este caso deberiamos generar una interfaz telaaraña e implementarsela al que lo necesita. Se generan mas interfaces asegurandonos que cada objeto tenga los metodos que realmente utilice
+Manejamos un objeto con una interfaz, si tenemos varios aracnidos como arañas, tarantulas y escorpiones tendriamos una interfaz aracnido que tiene las clases araña, tarantula y escorpiones. Tendriamos un problema utilizando el metodo telaaraña, lo implementariamos en todos y le podriamos un panic a escorpion el principio de ISP dice que sólo deberían conocer de éste aquellos métodos que realmente usan, y no aquellos que no necesitan usar, en este caso deberiamos generar una interfaz telaaraña e implementarsela al que lo necesita. Se generan mas interfaces asegurandonos que cada objeto tenga los metodos que realmente utilice<br />
 ![Events](../images/1.jpg)
 
 ### Dependency Inversion Principle
 Los módulos de alto nivel no deberían depender de los módulos de bajo nivel. Ambos deberían depender de abstracciones (p.ej., interfaces).
-Las abstracciones no deberían depender de los detalles. Los detalles (implementaciones concretas) deben depender de abstracciones.
+Las abstracciones no deberían depender de los detalles. Los detalles (implementaciones concretas) deben depender de abstracciones.<br />
 ![Events](../images/2.jpg)
 
 
@@ -52,10 +52,11 @@ Se utiliza para transformar una interfaz en otra, de tal modo que una clase que 
 # Bridge
 Previene el producto carteciano. <br />
 El patrón Bridge, también conocido como Handle/Body, es una técnica usada en programación para desacoplar una abstracción de su implementación, de manera que ambas puedan ser modificadas independientemente sin necesidad de alterar por ello la otra.<br /><br />
-Problema
-![Events](../images/4.png)
-Solucion
+Problema<br />
+![Events](../images/4.png)<br />
+Solucion<br />
 ![Events](../images/5.png)
+<br />
 
 ![Events](../images/6.png)
 
@@ -63,9 +64,9 @@ Solucion
 El patrón Composite sirve para construir objetos complejos a partir de otros más simples y similares entre sí, gracias a la composición recursiva y a una estructura en forma de árbol.<br />
 Esto simplifica el tratamiento de los objetos creados, ya que al poseer todos ellos una interfaz común, se tratan todos de la misma manera.<br />
 Un claro ejemplo de uso extendido de este patrón se da en los entornos de programación 2D para aplicaciones gráficas. Un videojuego puede contener diferentes capas "layers" de sprites (como una capa de enemigos) pudiéndose invocar un método que actúe sobre toda esta capa de sprites a la vez (por ejemplo, para ocultarlos, darles un filtro de color etc.).<br /><br />
-En este caso tenemos Productos y cajas, que a la vez hay cajas mas pequeñas con mas productos, en este caso seria complicado conocer el precio total
-![Events](../images/7.png)
-Pero el patron composite nos indica para que trabajems con Productos y Cajas a travez de una interface en comun, que declarara (por ejemplo) el metodo calcular precio
+En este caso tenemos Productos y cajas, que a la vez hay cajas mas pequeñas con mas productos, en este caso seria complicado conocer el precio total<br />
+![Events](../images/7.png)<br />
+Pero el patron composite nos indica para que trabajems con Productos y Cajas a travez de una interface en comun, que declarara (por ejemplo) el metodo calcular precio<br />
 ![Events](../images/8.png)
 
 # Decorator
@@ -74,3 +75,14 @@ Problema<br/>
 ![Events](../images/9.png)
 Solucion<br/>
 ![Events](../images/10.png)
+
+# Facade
+Fachada (Facade) es un tipo de patrón de diseño estructural. Viene motivado por la necesidad de estructurar un entorno de programación y reducir su complejidad con la división en subsistemas, minimizando las comunicaciones y dependencias entre estos.<br />
+Por ejemplo una casa, tiene electricidad, ventilacion, plomeria. <br />
+Pasar de un sistema complicado a un set de subsistemas detras de escena
+
+# Flyweight
+El patrón Flyweight (u objeto ligero) sirve para eliminar o reducir la redundancia cuando tenemos gran cantidad de objetos que contienen información idéntica, además de lograr un equilibrio entre flexibilidad y rendimiento (uso de recursos).<br />
+Ayuda a reducir el consumo de la memoria ram<br />
+Por ejempo para usuarios de un juego, muchos se llaman Jonh o Jane, muchos valores repetidos<br />
+![Events](../images/11.png)
