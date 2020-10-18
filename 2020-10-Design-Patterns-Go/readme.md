@@ -86,3 +86,13 @@ El patrón Flyweight (u objeto ligero) sirve para eliminar o reducir la redundan
 Ayuda a reducir el consumo de la memoria ram<br />
 Por ejempo para usuarios de un juego, muchos se llaman Jonh o Jane, muchos valores repetidos<br />
 ![Events](../images/11.png)
+
+# Proxy
+El patrón Proxy es un patrón estructural que tiene como propósito proporcionar un subrogado o intermediario de un objeto para controlar su acceso.<br />
+Un proxy es un contenedor o un objeto de agente que el cliente está llamando para acceder al objeto de servicio real detrás de escena.<br />
+![Events](../images/12.png)
+<br />Problema<br/>
+
+![Events](../images/13.png)
+Solucion<br/>
+![Events](../images/14.png)
