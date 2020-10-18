@@ -73,7 +73,8 @@ Pero el patron composite nos indica para que trabajems con Productos y Cajas a t
 El patrón Decorator responde a la necesidad de añadir dinámicamente funcionalidad a un Objeto. Esto nos permite no tener que crear sucesivas clases que hereden de la primera incorporando la nueva funcionalidad, sino otras que la implementan y se asocian a la primera.<br />
 Problema<br/>
 ![Events](../images/9.png)
-Solucion<br/>
+<br />Solucion<br/>
+
 ![Events](../images/10.png)
 
 # Facade
@@ -94,5 +95,21 @@ Un proxy es un contenedor o un objeto de agente que el cliente está llamando pa
 <br />Problema<br/>
 
 ![Events](../images/13.png)
-Solucion<br/>
-![Events](../images/14.png)
+<br />Solucion<br/>
+
+![Events](../images/14.png) <br />
+
+**El proxy genera una interfaz IDENTICA al objeto, el decorator genera una interface MEJORADA al objeto**
+
+# Chain of Responsability
+El patrón de diseño o cadena de responsabilidad es un patrón de comportamiento que evita acoplar el emisor de una petición a su receptor dando a más de un objeto la posibilidad de responder a una petición. Para ello, se encadenan los receptores y pasa la petición a través de la cadena hasta que es procesada por algún objeto. Este patrón es utilizado a menudo en el contexto de las interfaces gráficas de usuario donde un objeto puede estar compuesto de varios objetos (que generalmente heredan de una super clase "vista"). No se debe confundir con el patrón Composite (patrón de diseño) que se basa en un concepto similar. Según si el ambiente de ventanas genera eventos, los objetos los manejan o los "pasan" (transmiten) hasta que algún elemento consume dicho evento y se detiene la propagación. Un claro ejemplo de cadena de responsabilidades sería una estructura de datos que contiene nodos cuya implementación es opaca para el usuario de dicha estructura de datos (no conoce salvo la interfaz de la estructura de datos). Internamente los nodos se relacionan mediante punteros y una llamada a un método de la estructura de datos hará que un mensaje se propague por la cadena de nodos hasta llegar a su receptor. Es decir, una petición de "búsqueda(clave)" al contenedor de nodos hará que el mismo pase dicho mensaje a uno de los nodos (raíz, primero, etc; dependiendo de como se haya implementado la estructura de datos) devolviendo el nodo el resultado si su atributo clave coincide con la búsqueda o mandando dicho mensaje al siguiente nodo en caso contrario. Obviamente se daría este caso a niveles teóricos pues existen formas más óptimas de solventar el anterior problema de ejemplo y; sobre todo, ha de tenerse en cuenta que una cadena muy grande de muchos elementos puede llegar a apilar en memoria una gran cantidad de llamadas a procedimientos hasta que la cadena retorne un resultado con su consiguiente coste asociado.<br />
+![Events](../images/15.png)
+<br />Problema<br/>
+
+![Events](../images/16.png)
+<br />Suponete que ahora queremos agregar mas validaciones antes de pasar los datos<br />
+
+![Events](../images/17.png)
+<br />Solucion<br/>
+
+![Events](../images/18.png) <br />
