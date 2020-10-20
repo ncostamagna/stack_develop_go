@@ -133,3 +133,16 @@ Cuando queremos un objeto que representa una operacion<br />
 El interpreter es un patrón de diseño que, dado un lenguaje, define una representación para su gramática junto con un intérprete del lenguaje.<br />
 Se usa para definir un lenguaje para representar expresiones regulares que representen cadenas a buscar dentro de otras cadenas. Además, en general, para definir un lenguaje que permita representar las distintas instancias de una familia de problemas.<br />
 ![Events](../images/3.jpg) <br />
+
+# Interator
+En diseño de software, el patrón de diseño Iterador, define una interfaz que declara los métodos necesarios para acceder secuencialmente a un grupo de objetos de una colección. Algunos de los métodos que podemos definir en la interfaz Iterador son:<br />
+
+Primero(), Siguiente(), HayMas() y ElementoActual().<br />
+Este patrón de diseño permite recorrer una estructura de datos sin que sea necesario conocer la estructura interna de la misma.<br />
+![Events](../images/25.png) <br />
+Problem<br />
+![Events](../images/26.png) <br />
+![Events](../images/27.png) <br />
+Solucion<br />
+![Events](../images/28.png) <br />
+![Events](../images/29.png) <br />
