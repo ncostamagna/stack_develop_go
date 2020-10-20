@@ -178,6 +178,37 @@ func (user User) Get() rest_errors.RestErr {
 }
 ```
 
+### Scope
+It’s worth to mention that assigning new value to variable doesn’t affect scoping (aka visibility):
+```go
+v := 1
+{
+    v = 2  // assignment
+    fmt.Println(v)
+}
+fmt.Println(v)
+```
+```sh
+# Outputs
+>./bin/sandbox
+2
+2
+```
+
+```go
+v := 1
+{
+    v := 2  // short variable declaration
+    fmt.Println(v)
+}
+fmt.Println(v)
+```
+```sh
+# Outputs
+>./bin/sandbox
+2
+1
+```
 # Vectores
 
 **slice**: Vectores dinamicos, puedo ampiar la dimension en tiempo de ejecucion

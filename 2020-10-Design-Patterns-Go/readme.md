@@ -113,3 +113,18 @@ El patrón de diseño o cadena de responsabilidad es un patrón de comportamient
 <br />Solucion<br/>
 
 ![Events](../images/18.png) <br />
+
+# Command
+Este patrón permite solicitar una operación a un objeto sin conocer realmente el contenido de esta operación, ni el receptor real de la misma. Para ello se encapsula la petición como un objeto, con lo que además facilita la parametrización de los métodos.<br />
+Se utiliza mucho para botones que pueden realizar diferentes tipos de funcionalidades, para unificar el codigo y no tener que replicar codigo para todas las funcionalidades<br />
+Cuando queremos un objeto que representa una operacion<br />
+![Events](../images/19.png)
+<br />Problema<br/>
+
+![Events](../images/20.png)<br />
+![Events](../images/21.png)<br />
+![Events](../images/22.png)
+<br />Solucion<br/>
+
+![Events](../images/23.png) <br />
+![Events](../images/24.png) <br />
