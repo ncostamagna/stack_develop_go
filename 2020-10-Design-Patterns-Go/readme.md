@@ -155,9 +155,18 @@ Habitualmente un programa está compuesto de un número de clases (muchas veces 
 Con el patrón mediador, la comunicación entre objetos es encapsulada con un objeto mediador. Los objetos no se comunican de forma directa entre ellos, en lugar de ello se comunican mediante el mediador. Esto reduce las dependencias entre los objetos en comunicación, reduciendo entonces la Dependencia de código.
 <br />
 
-![Events](../images/30.png) <br />
-Problem<br />
-![Events](../images/31.png) <br />
-Solucion<br />
+![Events](../images/30.png)
+### Problem
+![Events](../images/31.png)
+### Solucion
 ![Events](../images/32.png) <br />
-![Events](../images/33.png) <br />
+![Events](../images/33.png)
+
+# Memento
+Memento, es un patrón de diseño cuya finalidad es almacenar el estado de un objeto (o del sistema completo) en un momento dado de manera que se pueda restaurar en ese punto de manera sencilla. Para ello se mantiene almacenado el estado del objeto para un instante de tiempo en una clase independiente de aquella a la que pertenece el objeto (pero sin romper la encapsulación), de forma que ese recuerdo permita que el objeto sea modificado y pueda volver a su estado anterior.<br />
+![Events](../images/34.png)
+### Problem
+![Events](../images/35.png)
+### Solucion
+![Events](../images/36.png) <br />
+![Events](../images/37.png)
