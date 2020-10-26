@@ -184,4 +184,30 @@ Definir una dependencia uno a muchos entre objetos, de tal forma que cuando el o
 ![Events](../images/40.png) <br />
 ![Events](../images/41.png)
 
+# State
+El patrón de diseño State se utiliza cuando el comportamiento de un objeto cambia dependiendo del estado del mismo. Por ejemplo: una alarma puede tener diferentes estados, como desactivada, activada, en configuración. Definimos una interfaz Estado_Alarma, y luego definimos los diferentes estados.<br />
+![Events](../images/42.png)<br />
+![Events](../images/43.png)<br />
+### Problem
+![Events](../images/44.png)
+```php
+	class Document is
+    field state: string
+	// ...
+    method publish() is
+        switch (state)
+            "draft":
+                state = "moderation"
+                break
+            "moderation":
+                if (currentUser.role == 'admin')
+                    state = "published"
+                break
+            "published":
+                // Do nothing.
+                break
+	// ...
+```
 
+### Solucion
+![Events](../images/45.png)
