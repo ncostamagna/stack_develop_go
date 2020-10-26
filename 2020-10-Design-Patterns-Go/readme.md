@@ -211,3 +211,77 @@ El patrón de diseño State se utiliza cuando el comportamiento de un objeto cam
 
 ### Solucion
 ![Events](../images/45.png)
+
+### Strategy
+El patrón Estrategia (Strategy) es un patrón de diseño para el desarrollo de software. Se clasifica como patrón de comportamiento porque determina cómo se debe realizar el intercambio de mensajes entre diferentes objetos para resolver una tarea. El patrón estrategia permite mantener un conjunto de algoritmos de entre los cuales el objeto cliente puede elegir aquel que le conviene e intercambiarlo dinámicamente según sus necesidades.<br />
+![Events](../images/46.png) <br />
+![Events](../images/50.png) 
+### Problem
+![Events](../images/47.png) 
+### Solucion
+![Events](../images/48.png) <br />
+![Events](../images/49.png) 
+
+# Template Method
+define el esqueleto de programa de un algoritmo en un método, llamado método de plantilla, el cual difiere algunos pasos a las subclases.1​ Permite redefinir ciertos pasos seguros de un algoritmo sin cambiar la estructura del algoritmo.<br />
+El método de plantilla está diseñado para marcos, donde cada uno implementa las partes invariables de la arquitectura de un ámbito, dejando "placeholders" para personalizar las opciones. <br />
+![Events](../images/51.png) <br />
+![Events](../images/52.png) 
+### Problem
+![Events](../images/53.png) 
+### Solucion
+![Events](../images/54.png) <br />
+![Events](../images/55.png) 
+
+# Visitor
+En programación orientada a objetos, el patrón visitor es una forma de separar el algoritmo de la estructura de un objeto.
+
+La idea básica es que se tiene un conjunto de clases elemento que conforman la estructura de un objeto. Cada una de estas clases elemento tiene un método aceptar (accept()) que recibe al objeto visitante (visitor) como argumento. El visitante es una interfaz que tiene un método visit diferente para cada clase elemento; por tanto habrá implementaciones de la interfaz visitor de la forma: visitorClase1, visitorClase2... visitorClaseN. El método accept de una clase elemento llama al método visit de su clase. Clases concretas de un visitante pueden entonces ser escritas para hacer una operación en particular.
+
+Cada método visit de un visitante concreto puede ser pensado como un método que no es de una sola clase, sino de un par de clases: el visitante concreto y clase elemento particular. Así el patrón visitor simula el envío doble (en inglés este término se conoce como Double-Dispatch) en un lenguaje convencional orientado a objetos de envío único (Single-Dispatch), como son Java o C++.
+<br />
+El patrón visitor también especifica cómo sucede la interacción en la estructura del objeto. En su versión más sencilla, donde cada algoritmo necesita iterar de la misma forma, el método accept de un elemento contenedor, además de una llamada al método visit del objeto visitor, también pasa el objeto visitor como argumento al llamar al método accept de todos sus elementos hijos.
+<br />
+Este patrón es ampliamente utilizado en intérpretes, compiladores y procesadores de lenguajes, en general.<br />
+
+![Events](../images/56.png) <br />
+![Events](../images/57.png) 
+### Problem
+![Events](../images/58.png) <br />
+![Events](../images/59.png) 
+### Solucion
+
+```java
+class ExportVisitor implements Visitor is
+    method doForCity(City c) { ... }
+    method doForIndustry(Industry f) { ... }
+    method doForSightSeeing(SightSeeing ss) { ... }
+    // ...
+```
+```java
+foreach (Node node in graph)
+    if (node instanceof City)
+        exportVisitor.doForCity((City) node)
+    if (node instanceof Industry)
+        exportVisitor.doForIndustry((Industry) node)
+    // ...
+}
+```
+```java
+// Client code
+foreach (Node node in graph)
+    node.accept(exportVisitor)
+
+// City
+class City is
+    method accept(Visitor v) is
+        v.doForCity(this)
+    // ...
+
+// Industry
+class Industry is
+    method accept(Visitor v) is
+        v.doForIndustry(this)
+    // ...
+```
+![Events](../images/60.png)
