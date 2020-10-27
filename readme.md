@@ -326,7 +326,7 @@ no existen variables globales, dentro del llamado de una api Go creo un contexto
 espacio en memoria donde voy a ir compartiendo cosas, nos sirven para comunicar informacion 
 
 #### log
-para generar logs
+para generar logs, nos conviene utilizar **log.Println()**, esta bueno porque nos muestra la fecha y hora al costado de cada linea
 
 #### gin-gonic
 HTTP web framework, buena performace
