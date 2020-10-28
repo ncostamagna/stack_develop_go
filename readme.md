@@ -352,6 +352,15 @@ Cliente HTTP de mercado libre, tiene mocks y es bastante comleto
 ### Go-sqlmock
 para impementar todos los metodos que tenemos en la base de datos
 
+
+### bcrypt
+Implementar crypto y hash,<br />
+```go
+bcrypt.MaxCost     (int = 4)  // Mas seguridad pero mas costoso
+bcrypt.MinCost     (int = 31) // Menos seguro pero menos costoso
+bcrypt.DefaultCost (int = 10) // Punto medio
+```
+
 # Logger
 
 ### Zap
