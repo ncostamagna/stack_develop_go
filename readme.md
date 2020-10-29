@@ -321,6 +321,19 @@ type Usuario struct {
 
 # Packages
 
+Analizar si el go module es compatible
+```sh
+go list -m -version github.com/dgrijalva/jwt-go
+```
+Si me aparece +incopatible es que es incompatible :p<br />
+Significa que la dependencia tiene un **semver major** de 2 o superior y no es un modulo de Go todavia, <br />
+No tiene un mod.go en el codigo <br />
+**v4.5.1**
+- 4 -> Major
+- 5 -> Minor
+- 1 -> Patch
+
+
 #### context
 no existen variables globales, dentro del llamado de una api Go creo un contexto, es un 
 espacio en memoria donde voy a ir compartiendo cosas, nos sirven para comunicar informacion 
