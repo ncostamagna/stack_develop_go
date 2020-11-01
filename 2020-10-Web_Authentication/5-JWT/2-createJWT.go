@@ -88,6 +88,7 @@ func checkSig(msg, sig []byte) (bool, error) {
 	return same, nil
 }
 
+// creamos el token
 func createToken(c *UserClaims) (string, error) {
 	t := jwt.NewWithClaims(jwt.SigningMethodHS512, c)
 	signedToken, err := t.SignedString(key)
