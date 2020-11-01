@@ -14,3 +14,12 @@ https://github.com/GoesToEleven/golang-arch
 ```sh
 github.com/dgrijalva/jwt-go
 ```
+
+- MD5 (NO Usar, tiene vulnerabilidades)
+- SHA
+- BCrypto
+- Scrypto
+- Rot13: Encripta el mensaje cambiando de lugar los caracteres
+<br />
+
+![Events](../images/61.png)

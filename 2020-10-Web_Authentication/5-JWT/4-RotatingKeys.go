@@ -115,6 +115,7 @@ func generateNewKey() error {
 	return nil
 }
 
+// Replico como si fuera una base de datos
 type key struct {
 	key     []byte
 	created time.Time
