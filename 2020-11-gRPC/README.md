@@ -86,7 +86,7 @@ Porque Protocol Buffer
 Implementaciones de gRPC en los siguientes lenguajes:
 - java: puto gRPC en Java
 - go: puro gRPC en go
-- C: puto gRPQ en C
+- C: puro gRPQ en C
 - C++, Python, Ruby, objective C, PHP, C# y el resto en C <br />
 Por mas que tengamos microservicios en diferentes lenguajes podemos comunicarlos igual con gRPC<br />
 ![Events](../images/64.png)
