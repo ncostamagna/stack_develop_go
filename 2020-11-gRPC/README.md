@@ -74,7 +74,8 @@ service GreetService{
 Diferencias entre JSON y Protocol Buffer
 - JSON: CPU intensive, because the format is human readable
 - Pro Buff: is less CPU intensive, mas cerca del codigo maquinal al ser binario<br />
-![Events](../images/63.png)
+![Events](../images/63.png)<br />
+![Events](../images/69.png)
 <br />
 Porque Protocol Buffer
 - Facil de escribir la definicion de mensajes
@@ -115,7 +116,10 @@ diferencias entre http/2 y http/1.1: https://imagekit.io/demo/http2-vs-http1
 ![Events](../images/66.png)<br />
 
 ### 4 Types if API in gRPC
-- Unary -> traditional API (HTTP REST)
+- Unary -> traditional API (HTTP REST)<br />
+![Events](../images/67.png)<br />
+![Events](../images/68.png)
+
 
 
 # Escalabilidad
@@ -123,3 +127,4 @@ diferencias entre http/2 y http/1.1: https://imagekit.io/demo/http2-vs-http1
 - No tenemos bloqueos de hilos en los request
 - por lo tanto por cada gRPC server podemos servir millones de request en paralelo
 - gRPC Client puede ser asincronico o sincronico (bloking)
+- gRPC Client puede realizar load balancing
