@@ -1,11 +1,12 @@
-# Grpc Golang Course
-
-This is a companion repository for my [GRPC Golang course](http://bit.ly/grpc-golang-github)
-
-[![course logo](https://udemy-images.udemy.com/course/480x270/1685664_10e0_4.jpg)](http://bit.ly/grpc-golang-github)
-
-<br />
-Sitio oficial: https://grpc.io/
+# Indice
+- [Content](#content)
+- [Instalacion](#instalacion)
+- [Introduccion](#introduccion)
+- [Proto](#proto)
+- [Protocol Buffers](#protocol-buffers)
+- [gRPC Languages](#grpc-anguages)
+- [HTTP/2](#http/2)
+- [Escalabilidad](#escalabilidad)
 
 # Content
 
@@ -16,7 +17,36 @@ Sitio oficial: https://grpc.io/
 - Blog API CRUD w/ MongoDB
 <br />
 
+# Instalacion
 
+```sh
+curl -OL https://github.com/google/protobuf/releases/download/v3.13.0/protoc-3.13.0-linux-x86_64.zip
+unzip protoc-3.13.0-linux-x86_64.zip -d protoc3
+sudo mv protoc3/bin/* /usr/local/bin/
+sudo mv protoc3/include/* /usr/local/include/
+sudo chown ncostamagna /usr/local/bin/protoc
+sudo chown -R ncostamagna /usr/local/include/google
+```
+```sh
+go get -u google.golang.org/grpc
+
+# El instructor lo hace con este
+go get -u github.com/golang/protobuf/tree/master/protoc-gen-go
+
+# Yo encontre este
+go install google.golang.org/protobuf/cmd/protoc-gen-go
+go get google.golang.org/protobuf/cmd/protoc-gen-go \
+         google.golang.org/grpc/cmd/protoc-gen-go-grpc
+
+protoc folder/folderpb/file.proto --go_out=plugins=grpc:.
+
+
+# Como no me funcionaba instale esto
+go get google.golang.org/grpc/cmd/protoc-gen-go-grpc
+go get -u github.com/golang/protobuf/protoc-gen-go
+
+protoc -I . templatespb/templates.proto --go_out=plugins=grpc:.
+```
 # Introduccion
 
 gRPC es free y Open-Source desarrollado por Google<br />

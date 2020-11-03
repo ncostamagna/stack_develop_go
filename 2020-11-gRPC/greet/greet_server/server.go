@@ -13,11 +13,13 @@ import (
 	"google.golang.org/grpc/credentials"
 	"google.golang.org/grpc/status"
 
-	"github.com/simplesteph/grpc-go-course/greet/greetpb"
+	"github.com/ncostamagna/stack_develop_go/2020-11-gRPC/greet/greetpb"
 
 	"google.golang.org/grpc"
 )
 
+// va a ser nuestro objeto server donde vamos a implementar los metodos y que vamos a usar
+// para gRPC
 type server struct{}
 
 func (*server) Greet(ctx context.Context, req *greetpb.GreetRequest) (*greetpb.GreetResponse, error) {
@@ -111,6 +113,7 @@ func (*server) GreetWithDeadline(ctx context.Context, req *greetpb.GreetWithDead
 func main() {
 	fmt.Println("Hello world")
 
+	// 50051 puerto por defecto de gRPC
 	lis, err := net.Listen("tcp", "0.0.0.0:50051")
 	if err != nil {
 		log.Fatalf("Failed to listen: %v", err)
@@ -129,7 +132,9 @@ func main() {
 		opts = append(opts, grpc.Creds(creds))
 	}
 
+	// New server
 	s := grpc.NewServer(opts...)
+	// le pasamos el struct server que definimos
 	greetpb.RegisterGreetServiceServer(s, &server{})
 
 	if err := s.Serve(lis); err != nil {

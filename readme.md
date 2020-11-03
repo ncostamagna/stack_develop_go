@@ -45,7 +45,7 @@ Obliga al desarrollador a realizar buenas practicas<br />
 
 Instalamos Go de https://golang.org/ <br />
 
-Instalamos la extension **Go, Go Outliner y Go Autotest (chequeando nuestro programa)** de visual studio code <br />
+Instalamos la extension **Go, Go Outliner, vscode-proto3, Clang-Format y Go Autotest (chequeando nuestro programa)** de visual studio code <br />
 **Kite Autocomplete Plugin Python** es para Python pero nos sirve para Go<br />
 
 <br />
