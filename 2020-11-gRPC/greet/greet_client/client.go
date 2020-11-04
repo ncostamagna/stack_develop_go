@@ -21,7 +21,10 @@ func main() {
 	fmt.Println("Hello I'm a client")
 
 	tls := false
+
+	// Opcion insegura, sin SSL
 	opts := grpc.WithInsecure()
+
 	if tls {
 		certFile := "ssl/ca.crt" // Certificate Authority Trust certificate
 		creds, sslErr := credentials.NewClientTLSFromFile(certFile, "")
@@ -32,10 +35,13 @@ func main() {
 		opts = grpc.WithTransportCredentials(creds)
 	}
 
+	// debemos crear la conexion
 	cc, err := grpc.Dial("localhost:50051", opts)
 	if err != nil {
 		log.Fatalf("could not connect: %v", err)
 	}
+
+	// cerramos la conexion al final, con el defer
 	defer cc.Close()
 
 	c := greetpb.NewGreetServiceClient(cc)
