@@ -18,20 +18,30 @@ func main() {
 	if err != nil {
 		log.Fatalln("couldn't bcrypt password", err)
 	}
-	bs = bs[:16]
+	bs = bs[:16] //16 valores
 
 	rslt, err := enDecode(bs, msg)
 	if err != nil {
 		log.Fatalln(err)
 	}
 
+	// encripta
 	fmt.Println("before base64", string(rslt))
 
 	rslt2, err := enDecode(bs, string(rslt))
 	if err != nil {
 		log.Fatalln(err)
 	}
+	// desecripta
 	fmt.Println(string(rslt2))
+
+	lala, _ := enDecode(bs, string(rslt2))
+	// vuelve a encriptar
+	fmt.Println(string(lala))
+
+	lala2, _ := enDecode(bs, string(lala))
+	// vuelve a desencriptar
+	fmt.Println(string(lala2))
 }
 
 func enDecode(key []byte, input string) ([]byte, error) {

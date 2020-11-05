@@ -7,6 +7,10 @@ https://github.com/GoesToEleven/golang-arch
  prevent falso bearer token, usando cryptographic "signing"<br />
  es un hash basado en el mensaje, codigo autentificacion y algunas otras cosas
 
+# AES
+Encripta y desecripta cada vez que ejecutamos la funcion, no necesito un desecriptador y un encriptador<br />
+Una vez lo encrtipta, la segunda lo desecripta, tercera lo encripta y asi susesivamente
+
  # JWT
 ```javascript
 {JWT standard fields}.{Your fields}.Signature
