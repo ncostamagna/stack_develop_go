@@ -41,6 +41,7 @@ func bar(w http.ResponseWriter, r *http.Request) {
 		Value: code + "|" + email,
 	}
 
+	// seteo la cookie
 	http.SetCookie(w, &c)
 	http.Redirect(w, r, "/", http.StatusSeeOther)
 }

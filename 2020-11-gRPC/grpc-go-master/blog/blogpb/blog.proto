@@ -1,0 +1,94 @@
+// [START declaration]
+syntax = "proto3";
+
+package blog;
+
+import "google/api/annotations.proto";
+import "google/protobuf/timestamp.proto";
+import "google/protobuf/empty.proto";
+
+option go_package = "blog/blogpb";
+// [END declaration]
+
+// [START java_declaration]
+option java_package = "com.example.tutorial";
+option java_outer_classname = "BlogProtos";
+// [END java_declaration]
+
+// [START csharp_declaration]
+option csharp_namespace = "Google.Protobuf.Examples.Blog";
+// [END csharp_declaration]
+
+message Blog{
+    string id = 1;
+    string author_id = 2;
+    string title = 3;
+    string content = 4;
+    google.protobuf.Timestamp create_time = 5;
+}
+
+message CreateBlogRequest{
+    Blog blog = 1;
+}
+
+message CreateBlogResponse{
+    Blog blog = 1; // this one will have blog_id
+}
+
+message ReadBlogRequest{
+    string blog_id = 1;
+}
+
+message ReadBlogResponse{
+    Blog blog = 1;
+}
+
+message UpdateBlogRequest{
+    Blog blog = 1;
+}
+
+message UpdateBlogResponse{
+    Blog blog = 1;
+}
+
+message DeleteBlogRequest{
+   string blog_id = 1;
+}
+
+message DeleteBlogResponse{
+   string blog_id = 1;
+}
+
+message ListBlogResponse{
+    repeated Blog blog = 1;
+}
+
+service BlogService{
+    rpc CreateBlog(CreateBlogRequest) returns (CreateBlogResponse){
+        option (google.api.http) = {
+            post: "/blog/create",
+            body: "blog"
+        };
+    };
+    rpc ReadBlog(ReadBlogRequest) returns (ReadBlogResponse){
+        option (google.api.http) = {
+            get: "/blog/{blog_id}/read"
+        };
+    }; // return NOT_FOUND if not found.
+    rpc UpdateBlog(UpdateBlogRequest) returns (UpdateBlogResponse){
+        option (google.api.http) = {
+            put: "/blog/update",
+            body: "blog"
+        };
+    }; // return NOT_FOUND if not found.
+    rpc DeleteBlog(DeleteBlogRequest) returns (DeleteBlogResponse){
+        option (google.api.http) = {
+            delete: "/blog/{blog_id}/delete"
+        };
+    }; // return NOT_FOUND if not found.
+    rpc ListBlog(google.protobuf.Empty) returns (ListBlogResponse){
+        option (google.api.http) = {
+            get: "/blog/list"
+        };
+    };
+}
