@@ -47,9 +47,15 @@ func main() {
 	c := greetpb.NewGreetServiceClient(cc)
 	// fmt.Printf("Created client: %f", c)
 
-	doUnary(c)
-	// doServerStreaming(c)
-	// doClientStreaming(c)
+	// request / response
+	//doUnary(c)
+
+	// client request, server steam
+	//doServerStreaming(c)
+
+	// client stream, server one response
+	doClientStreaming(c)
+
 	// doBiDiStreaming(c)
 
 	// doUnaryWithDeadline(c, 5*time.Second) // should complete
@@ -88,6 +94,7 @@ func doServerStreaming(c greetpb.GreetServiceClient) {
 	for {
 		msg, err := resStream.Recv()
 		if err == io.EOF {
+			// se cierra el stream
 			// we've reached the end of the stream
 			break
 		}
@@ -99,6 +106,7 @@ func doServerStreaming(c greetpb.GreetServiceClient) {
 
 }
 
+// mando stream recibo una respuesta
 func doClientStreaming(c greetpb.GreetServiceClient) {
 	fmt.Println("Starting to do a Client Streaming RPC...")
 
@@ -139,7 +147,7 @@ func doClientStreaming(c greetpb.GreetServiceClient) {
 	for _, req := range requests {
 		fmt.Printf("Sending req: %v\n", req)
 		stream.Send(req)
-		time.Sleep(1000 * time.Millisecond)
+		//time.Sleep(1000 * time.Millisecond)
 	}
 
 	res, err := stream.CloseAndRecv()

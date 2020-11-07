@@ -32,6 +32,7 @@ func (*server) Greet(ctx context.Context, req *greetpb.GreetRequest) (*greetpb.G
 	return res, nil
 }
 
+// recibo una unica respuesta y respondo steam
 func (*server) GreetManyTimes(req *greetpb.GreetManyTimesRequest, stream greetpb.GreetService_GreetManyTimesServer) error {
 	fmt.Printf("GreetManyTimes function was invoked with %v\n", req)
 	firstName := req.GetGreeting().GetFirstName()
@@ -40,24 +41,30 @@ func (*server) GreetManyTimes(req *greetpb.GreetManyTimesRequest, stream greetpb
 		res := &greetpb.GreetManytimesResponse{
 			Result: result,
 		}
+
+		// voy mandando respuestas
 		stream.Send(res)
 		time.Sleep(1000 * time.Millisecond)
 	}
 	return nil
 }
 
+// recibo un stream y mando una unica respuesta
 func (*server) LongGreet(stream greetpb.GreetService_LongGreetServer) error {
 	fmt.Printf("LongGreet function was invoked with a streaming request\n")
 	result := ""
 	for {
 		req, err := stream.Recv()
+		time.Sleep(1000 * time.Millisecond)
 		if err == io.EOF {
 			// we have finished reading the client stream
+			// esto me retorna un error asi que le mando return tambien
 			return stream.SendAndClose(&greetpb.LongGreetResponse{
 				Result: result,
 			})
 		}
 		if err != nil {
+			// aca deberia haber un return tambien
 			log.Fatalf("Error while reading client stream: %v", err)
 		}
 
