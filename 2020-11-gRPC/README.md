@@ -7,6 +7,7 @@
 - [gRPC Languages](#grpc-anguages)
 - [HTTP/2](#http/2)
 - [Escalabilidad](#escalabilidad)
+- [Errors Code](#errors-code)
 
 # Content
 
@@ -158,3 +159,10 @@ diferencias entre http/2 y http/1.1: https://imagekit.io/demo/http2-vs-http1
 - por lo tanto por cada gRPC server podemos servir millones de request en paralelo
 - gRPC Client puede ser asincronico o sincronico (bloking)
 - gRPC Client puede realizar load balancing
+
+# Errors Code
+gRPC maneja un standart de codigos de errores
+<br />
+documentacion: https://grpc.io/docs/guides/error/
+<br />
+demo: http://avi.im/grpc-errors/

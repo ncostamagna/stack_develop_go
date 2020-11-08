@@ -158,6 +158,7 @@ func doClientStreaming(c greetpb.GreetServiceClient) {
 
 }
 
+// mando stream, recibo stream
 func doBiDiStreaming(c greetpb.GreetServiceClient) {
 	fmt.Println("Starting to do a BiDi Streaming RPC...")
 
@@ -198,6 +199,7 @@ func doBiDiStreaming(c greetpb.GreetServiceClient) {
 
 	waitc := make(chan struct{})
 	// we send a bunch of messages to the client (go routine)
+	// un hilo para el envio
 	go func() {
 		// function to send a bunch of messages
 		for _, req := range requests {
@@ -208,6 +210,7 @@ func doBiDiStreaming(c greetpb.GreetServiceClient) {
 		stream.CloseSend()
 	}()
 	// we receive a bunch of messages from the client (go routine)
+	// un hilo para lo que recibo
 	go func() {
 		// function to receive a bunch of messages
 		for {
@@ -225,6 +228,7 @@ func doBiDiStreaming(c greetpb.GreetServiceClient) {
 	}()
 
 	// block until everything is done
+	// bloqueo hasta que todo este ok
 	<-waitc
 }
 

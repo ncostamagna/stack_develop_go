@@ -105,7 +105,7 @@ func (*server) SquareRoot(ctx context.Context, req *calculatorpb.SquareRootReque
 	number := req.GetNumber()
 	if number < 0 {
 		return nil, status.Errorf(
-			codes.InvalidArgument,
+			codes.InvalidArgument, // codigo de retorno
 			fmt.Sprintf("Received a negative number: %v", number),
 		)
 	}

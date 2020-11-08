@@ -73,6 +73,7 @@ func (*server) LongGreet(stream greetpb.GreetService_LongGreetServer) error {
 	}
 }
 
+// recibo un stream, mando un steam, no tienen que coincidir
 func (*server) GreetEveryone(stream greetpb.GreetService_GreetEveryoneServer) error {
 	fmt.Printf("GreetEveryone function was invoked with a streaming request\n")
 
