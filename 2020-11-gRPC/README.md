@@ -150,8 +150,8 @@ diferencias entre http/2 y http/1.1: https://imagekit.io/demo/http2-vs-http1
 ### 4 Types if API in gRPC
 - Unary -> traditional API (HTTP REST)<br />
 ![Events](../images/67.png)<br />
-![Events](../images/68.png)
-
+![Events](../images/68.png)<br />
+![Events](../images/70.png)
 
 
 # Escalabilidad
@@ -172,3 +172,6 @@ demo: http://avi.im/grpc-errors/
 Es recomendable siempre definir un tiempo de deadline en todos nuestros clients <br />
 El server debera chequear si el deadline se excedio y debera cancelar el trabajo que esta haciendo<br />
 https://grpc.io/blog/deadlines/
+<br />
+
+![Events](../images/71.png)
