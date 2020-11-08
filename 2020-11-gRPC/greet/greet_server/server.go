@@ -100,9 +100,12 @@ func (*server) GreetEveryone(stream greetpb.GreetService_GreetEveryoneServer) er
 
 }
 
+// validamos deadline y cancelamos
 func (*server) GreetWithDeadline(ctx context.Context, req *greetpb.GreetWithDeadlineRequest) (*greetpb.GreetWithDeadlineResponse, error) {
 	fmt.Printf("GreetWithDeadline function was invoked with %v\n", req)
 	for i := 0; i < 3; i++ {
+		// aca utiliza canceled directamente
+		// if ctx.Err() == context.Canceled {
 		if ctx.Err() == context.DeadlineExceeded {
 			// the client canceled the request
 			fmt.Println("The client canceled the request!")

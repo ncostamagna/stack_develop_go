@@ -56,8 +56,10 @@ func main() {
 	// client stream, server one response
 	doClientStreaming(c)
 
+	// client stream, server stream
 	// doBiDiStreaming(c)
 
+	// Unary controlado con un deadline
 	// doUnaryWithDeadline(c, 5*time.Second) // should complete
 	// doUnaryWithDeadline(c, 1*time.Second) // should timeout
 }
@@ -232,6 +234,8 @@ func doBiDiStreaming(c greetpb.GreetServiceClient) {
 	<-waitc
 }
 
+// Aregamos validacion de Deadline, para cancelar conexion en un determinado
+// periodo de tiempo
 func doUnaryWithDeadline(c greetpb.GreetServiceClient, timeout time.Duration) {
 	fmt.Println("Starting to do a UnaryWithDeadline RPC...")
 	req := &greetpb.GreetWithDeadlineRequest{

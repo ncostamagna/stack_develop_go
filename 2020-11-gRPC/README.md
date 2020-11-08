@@ -8,6 +8,7 @@
 - [HTTP/2](#http/2)
 - [Escalabilidad](#escalabilidad)
 - [Errors Code](#errors-code)
+- [Deadline](#deadline)
 
 # Content
 
@@ -166,3 +167,8 @@ gRPC maneja un standart de codigos de errores
 documentacion: https://grpc.io/docs/guides/error/
 <br />
 demo: http://avi.im/grpc-errors/
+
+# Deadline
+Es recomendable siempre definir un tiempo de deadline en todos nuestros clients <br />
+El server debera chequear si el deadline se excedio y debera cancelar el trabajo que esta haciendo<br />
+https://grpc.io/blog/deadlines/
