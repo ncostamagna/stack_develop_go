@@ -26,7 +26,7 @@ func main() {
 	opts := grpc.WithInsecure()
 
 	if tls {
-		certFile := "ssl/ca.crt" // Certificate Authority Trust certificate
+		certFile := "ssl/dev.crt" // Certificate Authority Trust certificate
 		creds, sslErr := credentials.NewClientTLSFromFile(certFile, "")
 		if sslErr != nil {
 			log.Fatalf("Error while loading CA trust certificate: %v", sslErr)
