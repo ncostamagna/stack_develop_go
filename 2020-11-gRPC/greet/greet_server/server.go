@@ -131,7 +131,7 @@ func main() {
 	}
 
 	opts := []grpc.ServerOption{}
-	tls := false
+	tls := true
 	if tls {
 		certFile := "ssl/server.crt"
 		keyFile := "ssl/server.pem"

@@ -20,7 +20,7 @@ func main() {
 
 	fmt.Println("Hello I'm a client")
 
-	tls := false
+	tls := true
 
 	// Opcion insegura, sin SSL
 	opts := grpc.WithInsecure()
@@ -48,13 +48,13 @@ func main() {
 	// fmt.Printf("Created client: %f", c)
 
 	// request / response
-	//doUnary(c)
+	doUnary(c)
 
 	// client request, server steam
 	//doServerStreaming(c)
 
 	// client stream, server one response
-	doClientStreaming(c)
+	// doClientStreaming(c)
 
 	// client stream, server stream
 	// doBiDiStreaming(c)
