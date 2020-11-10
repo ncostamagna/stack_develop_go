@@ -52,7 +52,6 @@ func main() {
 
 	// client request, server steam
 	//doServerStreaming(c)
-
 	// client stream, server one response
 	// doClientStreaming(c)
 
