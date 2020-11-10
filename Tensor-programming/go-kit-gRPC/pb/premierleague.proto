@@ -1,0 +1,66 @@
+syntax = "proto3";
+
+package pb;
+
+// -------------- Stats Service ------------------
+
+service StatsService {
+    rpc ListTable(TableRequest) returns (TableReply) {}
+    rpc ListTeamPlayers(TeamRequest) returns (TeamReply) {}
+    rpc ListPositionPlayers(PositionRequest) returns (PositionReply) {}
+}
+
+message TableRequest {
+    string tableName = 1;
+}
+
+message Table {
+    string teamName = 1;
+    int32 teamPlayed = 2;
+    int32 teamWon = 3;
+    int32 teamDrawn = 4;
+    int32 teamLost = 5;
+    int32 teamGF = 6;
+    int32 teamGA = 7;
+    int32 teamGD = 8;
+    int32 teamPoints = 9;
+    int32 teamCapital = 10;
+}
+
+message TableReply {
+    repeated Table teams = 1;
+    string err = 2;
+
+}
+
+message TeamRequest {
+    string teamName = 1;
+}
+
+message Player {
+    string name = 1;
+    string team = 2;
+    string nationality = 3;
+    string position = 4;
+    int32 appearences = 5;
+    int32 goals = 6;
+    int32 assists = 7;
+    int32 passes = 8;
+    int32 interceptions = 9;
+    int32 tackles = 10;
+    int32 fouls = 11;
+}
+
+message TeamReply {
+    repeated Player players = 1;
+    string err = 2;
+}
+
+message PositionRequest {
+    string position = 1;
+}
+
+message PositionReply {
+    repeated Player players = 1;
+    string err = 2;
+}
