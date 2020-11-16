@@ -16,6 +16,7 @@ func main() {
 }
 
 func getCode(msg string) string {
+	// le seteo la Key
 	h := hmac.New(sha256.New, []byte("i love thursdays when it rains 8723 inches"))
 	h.Write([]byte(msg))
 	return fmt.Sprintf("%x", h.Sum(nil))

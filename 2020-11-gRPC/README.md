@@ -315,6 +315,11 @@ https://github.com/ktr0731/evans
 <br />
 
 ```sh
+chmod +x ./evans
+sudo mv ./evans /usr/local/bin/evans
+```
+
+```sh
 evans -p 50051 -r
 # Entramos a evans
 
