@@ -25,6 +25,8 @@ const myKey = "i love thursdays when it rains 8723 inches"
 func getJWT(msg string) (string, error) {
 	claims := myClaims{
 		StandardClaims: jwt.StandardClaims{
+			// en Unix time, representacion en milisegundos
+			// expira en 5 minutos
 			ExpiresAt: time.Now().Add(5 * time.Minute).Unix(),
 		},
 		Email: msg,
