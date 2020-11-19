@@ -76,6 +76,7 @@ func foo(w http.ResponseWriter, r *http.Request) {
 
 	ss := c.Value
 	afterVerificationToken, err := jwt.ParseWithClaims(ss, &myClaims{}, func(beforeVeritificationToken *jwt.Token) (interface{}, error) {
+		// validamos que el algoritmo de encriptacion sea el mismo
 		if beforeVeritificationToken.Method.Alg() != jwt.SigningMethodHS256.Alg() {
 			return nil, fmt.Errorf("SOMEONE TRIED TO HACK changed signing method")
 		}
@@ -95,11 +96,14 @@ func foo(w http.ResponseWriter, r *http.Request) {
 	// ... and if all is well, then returns no "error" and
 	// type TOKEN which has a field VALID will be true
 
+	// valido el token
 	isEqual := err == nil && afterVerificationToken.Valid
 
 	message := "Not logged in"
 	if isEqual {
 		message = "Logged in"
+
+		// en caso que el token sea valido, devuelvo el objeto
 		claims := afterVerificationToken.Claims.(*myClaims)
 		fmt.Println(claims.Email)
 		fmt.Println(claims.ExpiresAt)
