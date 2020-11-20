@@ -51,6 +51,7 @@ func index(w http.ResponseWriter, r *http.Request) {
 }
 
 func startGithubOauth(w http.ResponseWriter, r *http.Request) {
+	// la idea es agregar un uuid y despues chequear que sea ese valor correctamente
 	redirectURL := githubOauthConfig.AuthCodeURL("0000")
 	http.Redirect(w, r, redirectURL, http.StatusSeeOther)
 }
