@@ -74,6 +74,7 @@ func completeGithubOauth(w http.ResponseWriter, r *http.Request) {
 	ts := githubOauthConfig.TokenSource(r.Context(), token)
 	client := oauth2.NewClient(r.Context(), ts)
 
+	// graphQL
 	requestBody := strings.NewReader(`{"query": "query {viewer {id}}"}`)
 	resp, err := client.Post("https://api.github.com/graphql", "application/json", requestBody)
 	if err != nil {

@@ -1,0 +1,14 @@
+{
+    "name": "sls-example",
+    "description": "To run the golanf lambda service locally",
+    "version": "1.0.0",
+    "scripts": {
+        "start": "node ./node_modules/.bin/serverless offline start --useDocker",
+        "watch": "nodemon --watch ./ -e go,js --exec make build"
+    },
+    "devDependencies": {
+        "nodemon": "^2.0.3",
+        "serverless": "^1.83.2",
+        "serverless-offline": "^6.8.0"
+    }
+}
