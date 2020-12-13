@@ -211,7 +211,7 @@ fmt.Println(v)
 ```
 # Vectores
 
-**slice**: Vectores dinamicos, puedo ampiar la dimension en tiempo de ejecucion
+**slice**: Vectores dinamicos, puedo ampliar la dimension en tiempo de ejecucion
 ```go
 var vector [5]int // vector, no puedo ampliar mas
 var vector_slice []int //slice, puedo apliar dinamicamente
