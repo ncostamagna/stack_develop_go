@@ -47,3 +47,93 @@ _-----`  |(,__,__/__/_ .
 ejm98   |||
   , -=-~' .-^- _
 ```
+
+sudo apt-get install -y libgl1-mesa-dev
+sudo apt-get install -y libxcursor-dev
+libxinerama-dev
+sudo apt-get install libxcursor-dev libxrandr-dev libxinerama-dev libxi-dev
+
+# Multithreads
+
+### Process
+Funcion fork para identificar un nuevo proceso
+
+```go
+if fork() == 0 {
+  fmt.Println("I am the new process") //child
+} else {
+  fmt.Println("I am the old process") //parent
+}
+
+```
+
+### Thread
+Mismo espacio de memoria, no lo duplica como los process, consume menos memoria y es mas rapido, kernel level
+
+### Green Thread
+Mas eficiente que los threads cotidianos, en los anteriores el sistema se encarga de seleccionar el siguiente step o proceso (context switch), lo que demora tiempo.<br />
+Los **Green Thread** nos ayudan a reducir ese tiempo, son mas rapidos, user level, no necesita del context switch.<br />
+**Desventajas**: cuando necesita utilizar funcionalidades del sistema operativo como leer un archivo y tiene que esperar<br />
+Golang nos permite utilizar automaticamente un mix entre ambos
+
+# Comunicacion entre procesos
+
+## Pasar un mensaje
+Mandar un mensaje y recibir otro
+
+## Memoria compartida
+Comparten memoria y pueden obtener valores particulares compartidos entre los threads<br />
+Facil y eficiente
+
+## Synchronization with Mutexes
+
+Con las funcionalidades de **Lock y Unlock** me permite bloquear y desbloquear variables para que no sean pisadas por otro thread, y asi no haya inconsistencia
+
+#### Inconsistencia
+```go
+var money = 100
+
+func stingy() {
+	for i := 1; i <= 1000; i++ {
+		money += 10
+		time.Sleep(1 * time.Millisecond)
+	}
+	println("Stingy Done")
+}
+
+func spendy() {
+	for i := 1; i <= 1000; i++ {
+		money -= 10
+		time.Sleep(1 * time.Millisecond)
+	}
+	println("Spendy Done")
+}
+```
+
+#### Con Mutex
+```go
+var (
+	money = 100
+	lock  = sync.Mutex{}
+)
+
+func stingy() {
+	for i := 1; i <= 1000; i++ {
+		lock.Lock()
+		money += 10
+		lock.Unlock()
+		time.Sleep(1 * time.Millisecond)
+	}
+	println("Stingy Done")
+}
+
+func spendy() {
+	for i := 1; i <= 1000; i++ {
+		lock.Lock()
+		money -= 10
+		lock.Unlock()
+		time.Sleep(1 * time.Millisecond)
+	}
+	println("Spendy Done")
+}
+```

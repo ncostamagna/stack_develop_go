@@ -76,5 +76,7 @@ func createBoid(bid int) {
 	}
 	boids[bid] = &b
 	boidMap[int(b.position.x)][int(b.position.y)] = b.id
+
+	// Lo mandamos en un hilo
 	go b.start()
 }
