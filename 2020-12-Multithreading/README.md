@@ -137,3 +137,17 @@ func spendy() {
 	println("Spendy Done")
 }
 ```
+
+POdemos setear y definir por lectura y/o escritura, para no sobrecargar los threads
+
+```go
+	lock  = sync.RWMutex{}
+
+	// Lectura
+	lock.RLock()
+	lock.Runlock()
+
+	// Writer
+	lock.Lock()
+	lock.Unlock()
+```
