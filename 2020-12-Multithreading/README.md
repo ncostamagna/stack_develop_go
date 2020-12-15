@@ -75,6 +75,9 @@ Mas eficiente que los threads cotidianos, en los anteriores el sistema se encarg
 Los **Green Thread** nos ayudan a reducir ese tiempo, son mas rapidos, user level, no necesita del context switch.<br />
 **Desventajas**: cuando necesita utilizar funcionalidades del sistema operativo como leer un archivo y tiene que esperar<br />
 Golang nos permite utilizar automaticamente un mix entre ambos
+<br />
+
+![Events](../images/2020-12-13-18-08-55.png)
 
 # Comunicacion entre procesos
 
@@ -162,6 +165,6 @@ Wait() // espera hasta que los hijos terminen
 Done() //finaliza operacion
 
 ```
-imagen
-
+![Events](../images/2020-12-15-13-52-55.png) <br />
+![Events](../images/2020-12-15-13-53-12.png) <br />
 ejemplo en **filesearch**
