@@ -151,3 +151,17 @@ POdemos setear y definir por lectura y/o escritura, para no sobrecargar los thre
 	lock.Lock()
 	lock.Unlock()
 ```
+
+# Wait Groups
+Podemos hacer agrupaciones de thread para que vayan esperando y se vayan ejecutando de a grupos, algo parecido a las colas.<br />
+El main thread se bloquea, va ejecutando los wait group y cuando este es cero se desbloquea el main thread
+
+```go
+Add(int) //aregar nuevo thread
+Wait() // espera hasta que los hijos terminen
+Done() //finaliza operacion
+
+```
+imagen
+
+ejemplo en **filesearch**
