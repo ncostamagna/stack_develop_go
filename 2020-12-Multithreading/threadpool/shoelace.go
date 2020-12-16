@@ -17,14 +17,14 @@ type Point2D struct {
 	y int
 }
 
-const numberOfThreads int = 8
+const numberOfThreads int = 60
 
 var (
 	r         = regexp.MustCompile(`\((\d*),(\d*)\)`)
 	waitGroup = sync.WaitGroup{}
 )
 
-func findArea(inputChannel chan string) {
+func findArea(inputChannel chan string, i int) {
 	for pointsStr := range inputChannel {
 		var points []Point2D
 		for _, p := range r.FindAllStringSubmatch(pointsStr, -1) {
@@ -38,19 +38,32 @@ func findArea(inputChannel chan string) {
 			a, b := points[i], points[(i+1)%len(points)]
 			area += float64(a.x*b.y) - float64(a.y*b.x)
 		}
-		fmt.Println(math.Abs(area) / 2.0)
+
+		value := math.Abs(area) / 2.0
+
+		if value < 10000 {
+			// Solo se frena un thread de los 8
+			fmt.Printf("%f %d STOPPING\n", value, i)
+			time.Sleep(1 * time.Second)
+			fmt.Printf("%f %d CONTINUE\n", value, i)
+		} else {
+			fmt.Printf("%f %d\n", value, i)
+		}
+
 	}
 	waitGroup.Done()
 }
 
 func main() {
-	absPath, _ := filepath.Abs("./multithreadingingo/threadpool/")
+	absPath, _ := filepath.Abs("./threadpool/")
 	dat, _ := ioutil.ReadFile(filepath.Join(absPath, "polygons.txt"))
 	text := string(dat)
 
 	inputChannel := make(chan string, 1000)
+
+	// definimos que vamos a crear 8 threads
 	for i := 0; i < numberOfThreads; i++ {
-		go findArea(inputChannel)
+		go findArea(inputChannel, i)
 	}
 	waitGroup.Add(numberOfThreads)
 	start := time.Now()

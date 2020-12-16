@@ -168,3 +168,11 @@ Done() //finaliza operacion
 ![Events](../images/2020-12-15-13-52-55.png) <br />
 ![Events](../images/2020-12-15-13-53-12.png) <br />
 ejemplo en **filesearch**
+
+# Channels
+El problema con la memoria compartida es que no se bloque alguna parte de la memoria,
+**message passing** es otra opcion para la comunicacion entre threads.<br />
+IMAGEN <br />
+El mensaje solo lo consume uno y lo produce otro, no tenemos el problema de bloqueos pero no es tan flexible como el de memoria compartida, si quisieramos mandar mensajes a 100 diferentes threads seria mas dificil<br />
+Ejemplos en **channels** y **threadpoll**
+
