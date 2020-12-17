@@ -59,6 +59,7 @@ func main() {
 	dat, _ := ioutil.ReadFile(filepath.Join(absPath, "polygons.txt"))
 	text := string(dat)
 
+	// podremos agregar 1000 valores al canal
 	inputChannel := make(chan string, 1000)
 
 	// definimos que vamos a crear 8 threads
