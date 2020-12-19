@@ -176,3 +176,7 @@ IMAGEN <br />
 El mensaje solo lo consume uno y lo produce otro, no tenemos el problema de bloqueos pero no es tan flexible como el de memoria compartida, si quisieramos mandar mensajes a 100 diferentes threads seria mas dificil<br />
 Ejemplos en **channels** y **threadpoll**
 
+
+# Condition Variable
+Nos proporciona funcionalidades mas avanzadas, ejemplo en **condvariables**
+
