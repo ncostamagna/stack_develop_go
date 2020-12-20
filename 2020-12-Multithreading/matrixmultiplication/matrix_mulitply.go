@@ -16,7 +16,7 @@ var (
 	matrixB   = [matrixSize][matrixSize]int{}
 	result    = [matrixSize][matrixSize]int{}
 	rwLock    = sync.RWMutex{}
-	cond      = sync.NewCond(rwLock.RLocker())
+	cond      = sync.NewCond(rwLock.RLocker()) // utilizo un CV en rwLock
 	waitGroup = sync.WaitGroup{}
 )
 

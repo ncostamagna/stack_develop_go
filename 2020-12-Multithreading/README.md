@@ -172,11 +172,20 @@ ejemplo en **filesearch**
 # Channels
 El problema con la memoria compartida es que no se bloque alguna parte de la memoria,
 **message passing** es otra opcion para la comunicacion entre threads.<br />
-IMAGEN <br />
+![Events](../images/2020-12-15-20-56-47.png)<br />
 El mensaje solo lo consume uno y lo produce otro, no tenemos el problema de bloqueos pero no es tan flexible como el de memoria compartida, si quisieramos mandar mensajes a 100 diferentes threads seria mas dificil<br />
 Ejemplos en **channels** y **threadpoll**
 
 
 # Condition Variable
-Nos proporciona funcionalidades mas avanzadas, ejemplo en **condvariables**
+Nos proporciona funcionalidades mas avanzadas, ejemplo en **condvariables** <br />
+Puedo bloquear y mandar mensajes <br/>
+https://kaviraj.me/understanding-condition-variable-in-go/
 
+# Dead Locks 
+Cuando los recursos quedan bloqueados infinitamente
+![Events](../images/2020-12-20-18-34-35.png)<br />
+![Events](../images/2020-12-20-18-34-50.png)<br />
+![Events](../images/2020-12-20-18-35-13.png)<br />
+Un ejemplo<br />
+![Events](../images/2020-12-20-18-43-44.png)<br />
