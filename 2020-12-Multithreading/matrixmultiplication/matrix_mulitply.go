@@ -56,7 +56,7 @@ func main() {
 		generateRandomMatrix(&matrixB)
 		waitGroup.Add(matrixSize)
 		rwLock.Unlock()
-		cond.Broadcast()
+		cond.Broadcast() // le digo a los otros threads que pueden seguir
 	}
 	elapsed := time.Since(start)
 	fmt.Println("Done")
