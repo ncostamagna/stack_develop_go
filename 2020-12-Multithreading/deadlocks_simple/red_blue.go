@@ -37,6 +37,7 @@ func redRobot() {
 	}
 }
 
+// ejemplo de bloqueos de threads
 func main() {
 	go redRobot()
 	go blueRobot()

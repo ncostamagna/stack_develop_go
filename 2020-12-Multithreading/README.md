@@ -189,3 +189,4 @@ Cuando los recursos quedan bloqueados infinitamente
 ![Events](../images/2020-12-20-18-35-13.png)<br />
 Un ejemplo<br />
 ![Events](../images/2020-12-20-18-43-44.png)<br />
+UN ejemplo de bloqueos de threads en **deadlocks_simple**<br />

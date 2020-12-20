@@ -1,5 +1,7 @@
 package common
 
+// Modelo
+
 import "sync"
 
 type Train struct {
