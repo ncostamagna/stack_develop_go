@@ -1,19 +1,24 @@
 package hierarchy
 
 import (
-	. "github.com/cutajarj/multithreadingingo/deadlocks_train/common"
 	"sort"
 	"time"
+
+	. "github.com/cutajarj/multithreadingingo/deadlocks_train/common"
 )
 
+// id del tren
+// reserveStart, reserveEnd -> posicion de inicio y fin
 func lockIntersectionsInDistance(id, reserveStart, reserveEnd int, crossings []*Crossing) {
 	var intersectionsToLock []*Intersection
 	for _, crossing := range crossings {
 		if reserveEnd >= crossing.Position && reserveStart <= crossing.Position && crossing.Intersection.LockedBy != id {
+			// bloqueo interseccion
 			intersectionsToLock = append(intersectionsToLock, crossing.Intersection)
 		}
 	}
 
+	// ordenamos por el valor numerico, para darles prioridad de bloqueo
 	sort.Slice(intersectionsToLock, func(i, j int) bool {
 		return intersectionsToLock[i].Id < intersectionsToLock[j].Id
 	})

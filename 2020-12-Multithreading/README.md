@@ -190,3 +190,26 @@ Cuando los recursos quedan bloqueados infinitamente
 Un ejemplo<br />
 ![Events](../images/2020-12-20-18-43-44.png)<br />
 UN ejemplo de bloqueos de threads en **deadlocks_simple**<br />
+### Resource Hierarchy
+Colocando valores numericos a cada thread, utilizandolos desde el menos hacia el mayor y luego voy de mayor a menor<br />
+![Events](../images/2020-12-28-18-26-27.png)<br />
+Con los trenes, cuando va a pasar el rojo bloquea al azul, haciendo que el mismo no lo interrumpa, pero esto puede generar bloqueos si se hacen al mismo tiempo<br />
+![Events](../images/2020-12-28-18-29-23.png)<br />
+La solucion es generar valores numericos, en este caso, para que el verde inice (4) necesita que el rojo (1) se desbloque<br />
+![Events](../images/2020-12-28-18-32-49.png)<br />
+Entonces lo toma el amarillo y avanza<br />
+![Events](../images/2020-12-28-18-34-07.png)<br />
+![Events](../images/2020-12-28-18-34-40.png)<br />
+![Events](../images/2020-12-28-18-34-56.png)<br />
+![Events](../images/2020-12-28-18-35-31.png)<br />
+
+### Arbitrator
+El arbitrator va a ser quien va a decidir que thread utilizara el recurso<br />
+![Events](../images/2020-12-28-19-13-41.png)<br />
+![Events](../images/2020-12-28-19-14-28.png)<br />
+![Events](../images/2020-12-28-19-15-57.png)<br />
+quiere pasar el azul<br />
+![Events](../images/2020-12-28-19-18-14.png)<br />
+![Events](../images/2020-12-28-19-18-59.png)<br />
+![Events](../images/2020-12-28-19-21-26.png)<br />
+Luego pasa a unlock<br />

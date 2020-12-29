@@ -1,9 +1,10 @@
 package arbitrator
 
 import (
-	. "github.com/cutajarj/multithreadingingo/deadlocks_train/common"
 	"sync"
 	"time"
+
+	. "github.com/cutajarj/multithreadingingo/deadlocks_train/common"
 )
 
 var (
@@ -11,6 +12,7 @@ var (
 	cond       = sync.NewCond(&controller)
 )
 
+// Si todos estan libres
 func allFree(intersectionsToLock []*Intersection) bool {
 	for _, it := range intersectionsToLock {
 		if it.LockedBy >= 0 {
@@ -29,14 +31,21 @@ func lockIntersectionsInDistance(id, reserveStart int, reserveEnd int, crossings
 			intersectionsToLock = append(intersectionsToLock, crossing.Intersection)
 		}
 	}
+
+	// bloqueamos
 	controller.Lock()
+
+	// en bucle infinito hasta que esten libres
 	for !allFree(intersectionsToLock) {
 		cond.Wait()
 	}
+
 	for _, it := range intersectionsToLock {
 		it.LockedBy = id
 		time.Sleep(10 * time.Millisecond)
 	}
+
+	// desbloqueamos
 	controller.Unlock()
 }
 

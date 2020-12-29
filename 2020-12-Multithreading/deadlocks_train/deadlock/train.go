@@ -1,8 +1,9 @@
 package deadlock
 
 import (
-	. "github.com/cutajarj/multithreadingingo/deadlocks_train/common"
 	"time"
+
+	. "github.com/cutajarj/multithreadingingo/deadlocks_train/common"
 )
 
 func MoveTrain(train *Train, distance int, crossings []*Crossing) {
@@ -11,11 +12,11 @@ func MoveTrain(train *Train, distance int, crossings []*Crossing) {
 		for _, crossing := range crossings {
 			if train.Front == crossing.Position {
 				crossing.Intersection.Mutex.Lock()
-				crossing.Intersection.LockedBy = train.Id
+				crossing.Intersection.LockedBy = train.Id // bloqueado por
 			}
 			back := train.Front - train.TrainLength
 			if back == crossing.Position {
-				crossing.Intersection.LockedBy = -1
+				crossing.Intersection.LockedBy = -1 // desbloqeuado
 				crossing.Intersection.Mutex.Unlock()
 			}
 		}
