@@ -14,7 +14,7 @@ import (
 )
 
 func TestGetCountriesnotFound(t *testing.T) {
-	// Mock
+	// -- Mock --
 	// No es necesario agregar los Mocks
 	// las agrego para probar el endpoint de mercadolibre en caso que se caiga
 	// internet y no pueda realizar las pruebas por ese motivo

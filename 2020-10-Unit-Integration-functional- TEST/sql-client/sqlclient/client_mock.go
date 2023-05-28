@@ -6,7 +6,7 @@ import (
 
 	_ "github.com/go-sql-driver/mysql"
 )
-
+// test
 func AddMock(mock Mock) {
 	if dbClient == nil {
 		return

@@ -6,7 +6,7 @@ import (
 
 	"gitlab.com/nc_public/sql-client/sqlclient"
 )
-
+// test
 const (
 	queryGetUser = "SELECT id, email FROM users WHERE id=?"
 )
